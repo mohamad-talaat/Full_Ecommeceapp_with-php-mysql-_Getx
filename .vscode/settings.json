@@ -1,0 +1,15 @@
+{
+    "java.compile.nullAnalysis.mode": "automatic",
+    "java.configuration.updateBuildConfiguration": "interactive",
+    "cSpell.words": [
+        "cupertino",
+        "datasource",
+        "Getx",
+        "offlinefailure",
+        "resetpassword",
+        "serverfailure",
+        "signup",
+        "verifycode",
+        "verifycodesignup"
+    ]
+}
