@@ -39,12 +39,12 @@ class HomePage extends StatelessWidget {
                                 controller.changePage(index);
                               },
                               //    iconbutton: Icons.home,
-                              iconbutton: controller.ListIconeButton[index],
+                              iconbutton: controller.bottomNav[index]['icon'],
                               //    active: controller.changePage(0) == true,
                               active: controller.currentpage == index
                                   ? true
                                   : false,
-                              textButton: controller.ListtitleButton[index]),
+                              textButton: controller.bottomNav[index]['name']),
                         ))
               ]),
             ));

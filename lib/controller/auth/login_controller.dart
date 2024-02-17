@@ -41,23 +41,19 @@ class LoginControllerImp extends LoginController {
       if (StatusRequest.success == statusRequest) {
         // then the data exist and no problem ::::
         if (response['status'] == "success") {
-          // data true in php // the problem will be in your entery data
-
           // data.addAll(response['data']);
-          if (response['data']["users_approve"] == "1") {
+          if (response['data']['users_approve'] == 1) {
+            myServices.sharedPreferences.setString("step", "2");
+            Get.offNamed(AppRoute.homePage);
             myServices.sharedPreferences
                 .setString("id", response['data']['users_id'].toString())
                 .toString();
-
             myServices.sharedPreferences
                 .setString("name", response['data']['users_name']);
-
             myServices.sharedPreferences
                 .setString("email", response['data']['users_email']);
             myServices.sharedPreferences
                 .setString("phone", response['data']['users_phone']);
-            myServices.sharedPreferences.setString("step", "2");
-            Get.offNamed(AppRoute.homePage);
           } else {
             Get.offNamed(AppRoute.verfiyCodeSignUp,
                 arguments: {"email": email.text});

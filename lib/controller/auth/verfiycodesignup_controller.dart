@@ -18,7 +18,8 @@ class VerifyCodeSignUpControllerImp extends VerifyCodeSignUpController {
   StatusRequest statusRequest = StatusRequest.none;
   String? email;
 /*   String? Resendverfiycode;
- */  @override
+ */
+  @override
   goToSuccessSignUp(verfiycoderesetpassword) async {
     statusRequest =
         StatusRequest.loading; //اول ما نستدعي الداتا بيكون ف مرحلة التحميل لسه
@@ -38,19 +39,18 @@ class VerifyCodeSignUpControllerImp extends VerifyCodeSignUpController {
       }
     }
     update();
-  } 
-  
-  
-   Resend() async {
-    statusRequest =
-        StatusRequest.loading; //اول ما نستدعي الداتا بيكون ف مرحلة التحميل لسه
-    var response = await testverfitcodeDignupData.resendVerfiyCode(email!);
-  
-        Get.offNamed(AppRoute.successSignUp);
-    update();
   }
 
+  Resend() async {
+      statusRequest =
+        StatusRequest.loading;
+        var response = await testverfitcodeDignupData.resendVerfiyCode(email!);
 
+    if (response["status"] == "success") {
+      Get.offNamed(AppRoute.successSignUp);
+    }
+    update();
+  }
 
   @override
   void onInit() {

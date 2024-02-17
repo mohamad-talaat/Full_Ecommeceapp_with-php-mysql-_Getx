@@ -57,17 +57,21 @@ class VerfiyCodeSignUp extends StatelessWidget {
                     controller.goToSuccessSignUp(verificationCode);
                   }, // end onSubmit
                 ),
-                const SizedBox(height: 40),
-                InkWell(
-/*                     onFocusChange: (verfiycoderesetpassword) {  controller.Resend(verfiycoderesetpassword);}
- */
-                    onTap: () {
-                      controller.Resend();
-                    },
-                    child: const Text(
-                      "Resend Verfiy Code",
-                      style: TextStyle(fontSize: 20),
-                    ))
+                const SizedBox(height: 30),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25),
+                  child: Container(
+                    width: double.infinity,
+                    child: ElevatedButton( 
+                        onPressed: () {
+                          controller.Resend();
+                        },
+                        child: const Text(
+                          "Resend Verfiy Code",
+                          style: TextStyle(fontSize: 20),
+                        )),
+                  ),
+                )
               ]),
             ),
           ),

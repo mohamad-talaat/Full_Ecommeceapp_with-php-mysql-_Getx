@@ -26,20 +26,26 @@ class homescreenControllerImp extends homescreenController {
       ],
     ),
   ];
-  List ListtitleButton = [
+  List bottomNav = [
+    {"name": "Home", "icon": Icons.home},
+    {"name": "notific.. ", "icon": Icons.notifications_active},
+    {"name": "favorite", "icon": Icons.favorite},
+    {"name": "settings", "icon": Icons.settings},
+  ];
+/*   List ListtitleButton = [
     "Home",
-    "settings",
-    "profile",
     "favourite",
+    "profile",
+    "settings",
   ];
   // ignore: non_constant_identifier_names
   List ListIconeButton = [
     Icons.home,
-    Icons.settings,
-    Icons.person,
     Icons.favorite,
+    Icons.person,
+    Icons.settings,
   ];
-
+ */
   int currentpage = 0;
   changePage(int index) {
     currentpage = index;
