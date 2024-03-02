@@ -1,5 +1,6 @@
 class ItemsModel {
   String? _itemsId;
+  String? _cartId;
   String? _itemsName;
   String? _itemsNameAr;
   String? _itemsDesc;
@@ -20,6 +21,7 @@ class ItemsModel {
 
   itemsModel({
     String? itemsId,
+    String? cartId,
     String? itemsName,
     String? itemsNameAr,
     String? itemsDesc,
@@ -40,6 +42,9 @@ class ItemsModel {
   }) {
     if (itemsId != null) {
       this._itemsId = itemsId;
+    } 
+     if (cartId != null) {
+      this._cartId = cartId;
     }
     if (itemsName != null) {
       this._itemsName = itemsName;
@@ -95,7 +100,9 @@ class ItemsModel {
   }
 
   String? get itemsId => _itemsId;
-  set itemsId(String? itemsId) => _itemsId = itemsId;
+  set itemsId(String? itemsId) => _itemsId = itemsId; 
+   String? get cartId => _itemsId;
+  set cartId(String? cartId) => _cartId = cartId;
   String? get itemsName => _itemsName;
   set itemsName(String? itemsName) => _itemsName = itemsName;
   int? get favorite => _favorite;
@@ -139,6 +146,7 @@ class ItemsModel {
   ItemsModel.fromJson(Map<String, dynamic> json) {
 //    itemsId = json['items_id'];
     _itemsId = json['items_id'].toString();
+    _cartId = json['cart_id'].toString();
     _itemsName = json['items_name'];
     _itemsNameAr = json['items_name_ar'];
     _itemsDesc = json['items_desc'];
@@ -161,6 +169,7 @@ class ItemsModel {
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['items_id'] = this._itemsId;
+    data['cart_id'] = this._cartId;
     data['items_name'] = this._itemsName;
     data['items_name_ar'] = this._itemsNameAr;
     data['items_desc'] = this._itemsDesc;

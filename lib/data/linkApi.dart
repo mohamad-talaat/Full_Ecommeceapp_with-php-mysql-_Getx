@@ -38,7 +38,19 @@ class AppLink {
   static const String removefavorite = "$linkServerName/favorite/remove.php";
   static const String viewfavorite = "$linkServerName/favorite/view.php";
   static const String deleteFromMyfavorite =
-      "$linkServerName/favorite/deletefrommyfavorite.php";
+      "$linkServerName/favorite/deletefrommyfavorite.php"; 
+      
+      
+       ////////////////////////////////////// cart  //////////////////////////////////////////
+
+  static const String addCart = "$linkServerName/cart/add.php";
+  static const String removeCart = "$linkServerName/cart/delete.php";
+  static const String viewCart  = "$linkServerName/cart/view.php";
+  static const String countcart  = "$linkServerName/cart/getcountitems.php";
+
+
+
+
 }
 
 /*  //const String linkServerName2 = "https://waelabohamza.com/coursephp" ;

@@ -43,10 +43,8 @@ class MyFavoriteController extends GetxController {
     //data.clear();
     var response = await myfavoriteData.deleteDataFromMyFavorite(favoriteid);
     print("=============================== Controller $response ");
-    data.removeWhere((element) => element.favoriteId == favoriteid);
-  /*   data.remove(favoriteid); */
+      data.removeWhere((element) => element.favoriteId.toString() == favoriteid.toString()); // to apdate page auto // السطر دا كل اللي بيعملة انه بيحدث الصفحة بعد الحذف ولكن الحذف تم من غيرة عادي  
 
-    // تحديث واجهة المستخدم فورًا
     update();
   }
 

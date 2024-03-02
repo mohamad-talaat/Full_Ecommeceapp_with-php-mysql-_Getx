@@ -1,3 +1,5 @@
+import 'package:e_commerce_app/controller/cart_controller.dart';
+import 'package:e_commerce_app/core/class/statusrequest.dart';
 import 'package:get/get.dart';
 
 import '../data/model/itemmodel.dart';
@@ -5,10 +7,32 @@ import '../data/model/itemmodel.dart';
 abstract class ProductDetailsController extends GetxController {}
 
 class ProductDetailsControllerImp extends ProductDetailsController {
+  CartController cartController = Get.put(CartController());
   late ItemsModel itemsModel;
+  late StatusRequest statusRequest;
+  int countitems = 1;
 
-  intialData() {
+  intialData() async {
+    statusRequest = StatusRequest.loading;
     itemsModel = Get.arguments['itemsmodel'];
+    countitems =
+        await cartController.viewCountCart(itemsModel.itemsId.toString());
+    statusRequest = StatusRequest.success;
+    update();
+  }
+
+  addone() {
+    cartController.addData(itemsModel.itemsId.toString());
+    countitems++;
+    update();
+  }
+
+  removeone() {
+    if (countitems > 0) {
+      cartController.deleteCart(itemsModel.itemsId.toString());
+      countitems--;
+    }
+    update();
   }
 
   List subitems = [

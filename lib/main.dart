@@ -1,6 +1,7 @@
 import 'package:e_commerce_app/core/Initialbinding.dart';
 import 'package:e_commerce_app/core/localization/translation.dart';
 import 'package:e_commerce_app/core/services/services.dart';
+import 'package:e_commerce_app/view/screen/cart.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     LocaleController controller = Get.put(LocaleController());
     return GetMaterialApp(
-      //  home: HomePage(),
+      //  home: Cart(),
       translations: MyTranslation(),
       debugShowCheckedModeBanner: false,
       // title: 'Flutter Demo',

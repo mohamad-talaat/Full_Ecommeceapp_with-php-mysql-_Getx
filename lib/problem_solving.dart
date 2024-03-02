@@ -1,3 +1,24 @@
+//int binToDec(String bin) => int.parse(bin, radix: 2);
+int binToDec(String bin) {}
+
+main() {
+  print(binToDec("1001001"));
+  // print(binToDec(1001001));
+  // int b = 1001001;
+  // print(b);
+  //
+  // List a = b.toString().split("");
+  // print(a);
+  //
+  // int c = 0;
+  // print(c);
+  //
+  // for (int i = 0; i < a.length - 1; i++) {
+  //   c = int.parse(a[i] * (2 ^ a[i].length - 1));
+  // }
+  // print("ddd");
+  // print(c);
+}
 
 ///////////////////////////////////////////////////////////////////////
 // closestToTen(int num1, int num2) {
