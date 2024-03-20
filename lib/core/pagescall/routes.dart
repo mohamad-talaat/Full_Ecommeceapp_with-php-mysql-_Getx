@@ -16,8 +16,8 @@ import 'package:e_commerce_app/view/screen/onboarding.dart';
 import 'package:e_commerce_app/view/screen/productdetails.dart';
 import 'package:get/get.dart';
 
-import '../../view/address/addAddress.dart';
-import '../../view/address/viewaddress.dart';
+import '../../view/screen/address/add.dart';
+import '../../view/screen/address/view.dart';
 import '../../view/screen/cart.dart';
 import '../../view/screen/checkout.dart';
 
@@ -31,8 +31,6 @@ List<GetPage<dynamic>>? routes = [
   GetPage(name: AppRoute.forgetPassword, page: () => const ForgetPassword()),
   GetPage(name: AppRoute.verfiyCode, page: () => const VerfiyCode()),
   GetPage(name: AppRoute.resetPassword, page: () => const ResetPassword()),
-  GetPage(name: AppRoute.viewAddress, page: () => const ViewAddress()),
-  GetPage(name: AppRoute.addAddress, page: () => const AddAddress()),
   GetPage(
       name: AppRoute.successResetpassword,
       page: () => const SuccessResetPassword()),
@@ -45,4 +43,13 @@ List<GetPage<dynamic>>? routes = [
   GetPage(name: AppRoute.myfavoritePage, page: () => const MyFavorite()),
   GetPage(name: AppRoute.cart, page: () => const Cart()),
   GetPage(name: AppRoute.checkout, page: () => const Checkout()),
+  //
+  GetPage(name: AppRoute.addressview, page: () => const AddressView()),
+  GetPage(name: AppRoute.addressadd, page: () => const AddressAdd()),
+  GetPage(name: AppRoute.checkout, page: () => const Checkout()),
+  // GetPage(name: AppRoute.orderspending, page: () => const OrdersPending()),
+  // GetPage(name: AppRoute.ordersarchive, page: () => const OrdersArchiveView()),
+  // GetPage(name: AppRoute.ordersdetails, page: () => const OrdersDetails()),
+  // GetPage(
+  //     name: AppRoute.addressadddetails, page: () => const AddressAddDetails()),
 ];

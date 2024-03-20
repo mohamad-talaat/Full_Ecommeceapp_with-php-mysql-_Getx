@@ -1,7 +1,5 @@
 class AppRoute {
   static const String login = "/login";
-  static const String checkout = "/checkout";
-  static const String addressadddetails = "/addressadddetails";
   static const String homePage = "/homePage";
   static const String onBoarding = "/onboarding";
   static const String signUp = "/signup";
@@ -16,6 +14,10 @@ class AppRoute {
   static const String productDetails = "/productDetails";
   static const String myfavoritePage = "/myfavoritePage";
   static const String cart = "/cart";
-  static const String viewAddress = "/viewAddress";
-  static const String addAddress = "/addAddress";
+
+  // Address
+  static const String checkout = "/checkout";
+  static const String addressadddetails = "/addressadddetails";
+  static const String addressview = "/viewAddress";
+  static const String addressadd = "/addAddress";
 }

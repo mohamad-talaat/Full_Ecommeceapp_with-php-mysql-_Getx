@@ -1,9 +1,10 @@
-import 'package:ecommercecourse/controller/address/view_controller.dart';
-import 'package:ecommercecourse/core/class/handlingdataview.dart';
-import 'package:ecommercecourse/core/constant/routes.dart';
-import 'package:ecommercecourse/data/model/addressmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../../controller/address/view_controller.dart';
+import '../../../core/pagescall/pagename.dart';
+import '../../../data/model/addressmodel.dart';
+import '../../widget/handlingdata/handlingdataview.dart';
 
 class AddressView extends StatelessWidget {
   const AddressView({Key? key}) : super(key: key);

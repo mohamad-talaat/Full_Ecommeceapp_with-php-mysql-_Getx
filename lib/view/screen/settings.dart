@@ -1,8 +1,9 @@
+import 'package:e_commerce_app/view/screen/address/add.dart';
+import 'package:e_commerce_app/view/screen/auth/login.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../core/constant/color.dart';
-import '../address/viewaddress.dart';
 
 class Settings extends StatelessWidget {
   const Settings({Key? key}) : super(key: key);
@@ -45,7 +46,7 @@ class Settings extends StatelessWidget {
                 ListTile(
                   onTap: () {
                     // Get.toNamed(AppRoute.viewAddress);
-                    Get.to(ViewAddress());
+                    Get.to(AddressAdd());
                   },
                   trailing: Icon(Icons.location_on_outlined),
                   title: Text("Address"),
@@ -62,7 +63,8 @@ class Settings extends StatelessWidget {
                 ),
                 ListTile(
                   onTap: () {
-                    //  controller.logout();
+                    //     controller.logout();
+                    Get.off(Login());
                   },
                   title: Text("Logout"),
                   trailing: Icon(Icons.exit_to_app),

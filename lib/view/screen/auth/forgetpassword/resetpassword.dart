@@ -58,6 +58,7 @@ class ResetPassword extends StatelessWidget {
                         ),
                         CustomTextFormAuth(
                           isNumber: false,
+                          
 
                           valid: (val) {
                             return validInput(val!, 3, 40, "password");
@@ -67,6 +68,7 @@ class ResetPassword extends StatelessWidget {
                           iconData: Icons.lock_outline,
                           labeltext: "19".tr,
                           // mycontroller: ,
+
                         ),
                         CustomButtonAuth(
                             text: "33".tr,

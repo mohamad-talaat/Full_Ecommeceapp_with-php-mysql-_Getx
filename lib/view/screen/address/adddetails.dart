@@ -1,11 +1,9 @@
-import 'package:ecommercecourse/controller/address/add_controller.dart';
-import 'package:ecommercecourse/controller/address/adddetails_controller.dart';
-import 'package:ecommercecourse/core/class/handlingdataview.dart';
-import 'package:ecommercecourse/core/shared/custombutton.dart';
-import 'package:ecommercecourse/view/widget/auth/custombuttonauth.dart';
-import 'package:ecommercecourse/view/widget/auth/customtextformauth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../../controller/address/adddetails_controller.dart';
+import '../../widget/auth/customtextformauth.dart';
+import '../../widget/handlingdata/handlingdataview.dart';
 
 class AddressAddDetails extends StatelessWidget {
   const AddressAddDetails({Key? key}) : super(key: key);
@@ -45,12 +43,12 @@ class AddressAddDetails extends StatelessWidget {
                       mycontroller: controller.name,
                       valid: (val) {},
                       isNumber: false),
-                  CustomButton(
-                    text: "Add",
-                    onPressed: () {
-                      controller.addAddress() ; 
-                    },
-                  )
+                  // CustomButton(
+                  //   text: "Add",
+                  //   onPressed: () {
+                  //     controller.addAddress();
+                  //   },
+                  // )
                 ])),
           )),
     );
