@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:e_commerce_app/core/pagescall/pagename.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -18,12 +20,14 @@ class ResetPasswordControllerImp extends ResetPasswordController {
 
   ResetPasswordData testresetPasswordData = ResetPasswordData(Get.find());
   StatusRequest statusRequest = StatusRequest.none;
+  @override
   goToSuccessResetPassword() async {
-    if (password.text != repassword.text)
+    if (password.text != repassword.text) {
       return Get.defaultDialog(
           title: "Warning",
           middleText: " The passwords not match ",
           titleStyle: const TextStyle(color: Colors.red));
+    }
 
     if (formstate.currentState!.validate()) {
       statusRequest = StatusRequest.loading;
@@ -46,11 +50,6 @@ class ResetPasswordControllerImp extends ResetPasswordController {
 
       update();
     } else {}
-
-    //   Get.offNamed(AppRoute.successResetpassword);
-    // } else {
-    //   print("Not Valid");
-    // }
   }
 
   String? email;

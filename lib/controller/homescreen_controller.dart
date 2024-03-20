@@ -10,11 +10,10 @@ abstract class homescreenController extends GetxController {
 class homescreenControllerImp extends homescreenController {
   List<Widget> ListPage = [
     const Home(),
-    const settings(),
     const Column(
       children: [
         Center(
-          child: Text("profile"),
+          child: Text("notifi"),
         )
       ],
     ),
@@ -25,6 +24,7 @@ class homescreenControllerImp extends homescreenController {
         )
       ],
     ),
+    const Settings(),
   ];
   List bottomNav = [
     {"name": "Home", "icon": Icons.home},

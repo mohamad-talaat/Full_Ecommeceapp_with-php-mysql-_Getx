@@ -31,6 +31,7 @@ class MyFavoriteController extends GetxController {
         print(data);
       } else {
         statusRequest = StatusRequest.failure;
+         
       }
       // End
     }
@@ -43,7 +44,10 @@ class MyFavoriteController extends GetxController {
     //data.clear();
     var response = await myfavoriteData.deleteDataFromMyFavorite(favoriteid);
     print("=============================== Controller $response ");
-      data.removeWhere((element) => element.favoriteId.toString() == favoriteid.toString()); // to apdate page auto // السطر دا كل اللي بيعملة انه بيحدث الصفحة بعد الحذف ولكن الحذف تم من غيرة عادي  
+    data.removeWhere((element) =>
+        element.favoriteId.toString() ==
+        favoriteid
+            .toString()); // to apdate page auto // السطر دا كل اللي بيعملة انه بيحدث الصفحة بعد الحذف ولكن الحذف تم من غيرة عادي
 
     update();
   }
@@ -51,7 +55,6 @@ class MyFavoriteController extends GetxController {
   @override
   void onInit() {
     viewFavorite();
-    // TODO: implement onInit
     super.onInit();
   }
 }

@@ -1,9 +1,10 @@
-import 'package:ecommercecourse/core/class/statusrequest.dart';
-import 'package:ecommercecourse/core/functions/handingdatacontroller.dart';
-import 'package:ecommercecourse/core/services/services.dart';
-import 'package:ecommercecourse/data/datasource/remote/address_data.dart';
-import 'package:ecommercecourse/data/model/addressmodel.dart';
 import 'package:get/get.dart';
+
+import '../../core/class/statusrequest.dart';
+import '../../core/functions/handlingDataController.dart';
+import '../../core/services/services.dart';
+import '../../data/datasource/remote/address_data.dart';
+import '../../data/model/addressmodel.dart';
 
 class AddressViewController extends GetxController {
   AddressData addressData = AddressData(Get.find());
@@ -35,8 +36,8 @@ class AddressViewController extends GetxController {
       if (response['status'] == "success") {
         List listdata = response['data'];
         data.addAll(listdata.map((e) => AddressModel.fromJson(e)));
-        if (data.isEmpty){
-          statusRequest = StatusRequest.failure ; 
+        if (data.isEmpty) {
+          statusRequest = StatusRequest.failure;
         }
       } else {
         statusRequest = StatusRequest.failure;

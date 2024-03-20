@@ -1,5 +1,5 @@
-import 'package:ecommercecourse/core/class/crud.dart';
-import 'package:ecommercecourse/linkapi.dart';
+import '../../../core/class/crud.dart';
+import '../../linkApi.dart';
 
 class CheckoutData {
   Crud crud;

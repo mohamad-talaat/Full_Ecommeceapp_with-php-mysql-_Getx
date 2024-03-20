@@ -1,9 +1,11 @@
 import 'dart:async';
-import 'package:ecommercecourse/core/class/statusrequest.dart';
-import 'package:ecommercecourse/core/constant/routes.dart';
+
+import 'package:e_commerce_app/core/class/statusrequest.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+
+import '../../core/pagescall/pagename.dart';
 
 class AddAddressController extends GetxController {
   StatusRequest statusRequest = StatusRequest.loading;

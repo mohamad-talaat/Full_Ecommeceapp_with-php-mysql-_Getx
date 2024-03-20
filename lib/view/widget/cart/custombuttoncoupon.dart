@@ -1,5 +1,6 @@
-import 'package:ecommercecourse/core/constant/color.dart';
 import 'package:flutter/material.dart';
+
+import '../../../core/constant/color.dart';
 
 class CustomButtonCoupon extends StatelessWidget {
   final String textbutton;

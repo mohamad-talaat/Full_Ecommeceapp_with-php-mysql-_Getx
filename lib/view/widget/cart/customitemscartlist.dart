@@ -1,24 +1,39 @@
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:e_commerce_app/controller/cart_controller.dart';
 import 'package:e_commerce_app/core/constant/color.dart';
-import 'package:e_commerce_app/core/constant/imgaeasset.dart';
+import 'package:e_commerce_app/data/linkApi.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class CustomItemsCartList extends StatelessWidget {
-  final String name ; 
-  final String price  ; 
-  final String count   ; 
-  const CustomItemsCartList({Key? key, required this.name, required this.price, required this.count , }) : super(key: key);
+  final String name;
+  final String price;
+  final String count;
+  final String image;
+  final void Function() onAdd;
+  final void Function() onRemove;
+  const CustomItemsCartList({
+    Key? key,
+    required this.name,
+    required this.price,
+    required this.count,
+    required this.image,
+    required this.onAdd,
+    required this.onRemove,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    CartController controller = Get.put(CartController());
     return Card(
       child: Container(
         child: Row(children: [
           Expanded(
               flex: 2,
-              child: Image.asset(
-                AppImageAsset.logo,
-                height: 90,
-                fit: BoxFit.cover,
+              child: CachedNetworkImage(
+                height: 80,
+                // imageUrl: '$image ', // not this >> pics are storege on server backend
+                imageUrl: '${AppLink.imagestItems}/$image ',
               )),
           Expanded(
               flex: 3,
@@ -33,7 +48,7 @@ class CustomItemsCartList extends StatelessWidget {
             children: [
               Container(
                   height: 35,
-                  child: IconButton(onPressed: () {}, icon: Icon(Icons.add))),
+                  child: IconButton(onPressed: onAdd, icon: Icon(Icons.add))),
               Container(
                   height: 30,
                   child: Text(
@@ -42,7 +57,8 @@ class CustomItemsCartList extends StatelessWidget {
                   )),
               Container(
                   height: 25,
-                  child: IconButton(onPressed: () {}, icon: Icon(Icons.remove)))
+                  child:
+                      IconButton(onPressed: onRemove, icon: Icon(Icons.remove)))
             ],
           ))
         ]),

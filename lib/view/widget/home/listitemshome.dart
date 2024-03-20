@@ -1,10 +1,9 @@
+import 'package:e_commerce_app/controller/home_controller.dart';
+import 'package:e_commerce_app/core/constant/color.dart';
+import 'package:e_commerce_app/data/linkApi.dart';
+import 'package:e_commerce_app/data/model/itemmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import '../../../controller/home_controller.dart';
-import '../../../core/constant/color.dart';
-import '../../../data/linkApi.dart';
-import '../../../data/model/itemmodel.dart';
 
 class ListItemsHome extends GetView<HomeControllerImp> {
   const ListItemsHome({Key? key}) : super(key: key);

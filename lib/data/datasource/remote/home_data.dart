@@ -11,4 +11,9 @@ class HomeData {
     // print("the problem here is <<<<<<<<<<<<<<<<testData");
     return response.fold((l) => l, (r) => r);
   }
+
+  searchData(String search) async {
+    var response = await crud.postData(AppLink.LinkSearch, {"search": search});
+    return response.fold((l) => l, (r) => r);
+  }
 }

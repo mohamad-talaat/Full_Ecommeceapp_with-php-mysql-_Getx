@@ -15,7 +15,9 @@ class Crud {
           return Right(responsebody);
 
         } else {
+
           return const Left(StatusRequest.serverfailure);
+          
         }
       } else {
         return const Left(StatusRequest.offline);

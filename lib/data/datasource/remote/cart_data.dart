@@ -6,12 +6,13 @@ class CartData {
 
   CartData(this.crud);
 
-  viewData() async {
-    var response = await crud.postData(AppLink.viewCart, {});
+  viewData(id) async {
+    var response = await crud.postData(AppLink.viewCart, {
+      "usersid": id,
+    });
 
     return response.fold((l) => l, (r) => r);
   }
-
 
   addCart(String usersid, String itemsid) async {
     var response = await crud.postData(AppLink.addCart,
@@ -26,6 +27,7 @@ class CartData {
 
     return response.fold((l) => l, (r) => r);
   }
+
   countCart(String usersid, String itemsid) async {
     var response = await crud.postData(AppLink.countcart,
         {"usersid": usersid.toString(), "itemsid": itemsid.toString()});
@@ -33,4 +35,11 @@ class CartData {
     return response.fold((l) => l, (r) => r);
   }
 
+  checkCoupon(String couponname) async {
+    var response = await crud.postData(AppLink.checkout, {
+      "couponname": couponname,
+    });
+
+    return response.fold((l) => l, (r) => r);
+  }
 }

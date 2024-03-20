@@ -1,9 +1,8 @@
 import 'package:e_commerce_app/controller/home_controller.dart';
 import 'package:e_commerce_app/core/constant/color.dart';
 import 'package:e_commerce_app/core/functions/translateddatabase.dart';
-import 'package:e_commerce_app/data/model/categoriesmodel.dart';
 import 'package:e_commerce_app/data/linkApi.dart';
-
+import 'package:e_commerce_app/data/model/categoriesmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -41,8 +40,7 @@ class Categories extends GetView<HomeControllerImp> {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        controller.goToItems(
-            controller.categories, i!, categoriesModel.categoriesId.toString());
+        controller.goToItems(controller.categories, i! , categoriesModel.categoriesId.toString());
       },
       child: Column(
         children: [
@@ -54,9 +52,8 @@ class Categories extends GetView<HomeControllerImp> {
             height: 70,
             width: 70,
             child: SvgPicture.network(
-              "${AppLink.imagestCategories}/${categoriesModel.categoriesImage}",
-              // color: AppColor.secondColor
-            ),
+                "${AppLink.imagestCategories}/${categoriesModel.categoriesImage}",
+                color: AppColor.secondColor),
           ),
           Text(
             "${translateDatabase(categoriesModel.categoriesNameAr, categoriesModel.categoriesName)}",

@@ -1,8 +1,7 @@
 import 'package:e_commerce_app/controller/home_controller.dart';
+import 'package:e_commerce_app/core/constant/color.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_state_manager/src/simple/get_view.dart';
-
-import '../../../core/constant/color.dart';
+import 'package:get/get.dart';
 
 class CustomCardHome extends GetView<HomeControllerImp> {
   final String title;
@@ -30,8 +29,8 @@ class CustomCardHome extends GetView<HomeControllerImp> {
         ),
         Positioned(
           top: -20,
-          right:controller.lang=="en"? -20:null,
-          left:controller.lang=="ar"? -20:null,
+          right: controller.lang == "en" ? -20 : null,
+          left: controller.lang == "ar" ? -20 : null,
           child: Container(
             height: 160,
             width: 160,

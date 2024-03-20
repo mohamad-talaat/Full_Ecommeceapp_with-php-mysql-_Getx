@@ -1,23 +1,77 @@
-import 'package:e_commerce_app/view/screen/auth/login.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class settings extends StatelessWidget {
-  const settings({super.key});
+import '../../core/constant/color.dart';
+import '../address/viewaddress.dart';
+
+class Settings extends StatelessWidget {
+  const Settings({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(children: [
-        const SizedBox(
-          height: 50,
-        ),
-        IconButton(
-            onPressed: () {
-              Get.off(const Login());
-            },
-            icon: const Icon(Icons.exit_to_app))
-      ]),
+    //  SettingsController controller = Get.put(SettingsController());
+    return Container(
+      child: ListView(
+        children: [
+          Stack(
+              clipBehavior: Clip.none,
+              alignment: Alignment.center,
+              children: [
+                Container(height: Get.width / 3, color: AppColor.primaryColor),
+                Positioned(
+                    top: Get.width / 3.9,
+                    child: Container(
+                      padding: EdgeInsets.all(4),
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(100)),
+                      child: CircleAvatar(
+                        radius: 40,
+                        backgroundColor: Colors.grey[100],
+                        //           backgroundImage: AssetImage(AppImageAsset.avatar),
+                      ),
+                    )),
+              ]),
+          SizedBox(height: 100),
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 10),
+            child: Card(
+              child: Column(mainAxisSize: MainAxisSize.min, children: [
+                ListTile(
+                  // onTap: () {},
+                  trailing: Switch(onChanged: (val) {}, value: true),
+                  title: Text("Disable Notificatios"),
+                ),
+                ListTile(
+                  onTap: () {
+                    // Get.toNamed(AppRoute.viewAddress);
+                    Get.to(ViewAddress());
+                  },
+                  trailing: Icon(Icons.location_on_outlined),
+                  title: Text("Address"),
+                ),
+                ListTile(
+                  onTap: () {},
+                  trailing: Icon(Icons.help_outline_rounded),
+                  title: Text("About us"),
+                ),
+                ListTile(
+                  onTap: () {},
+                  trailing: Icon(Icons.phone_callback_outlined),
+                  title: Text("Contact us"),
+                ),
+                ListTile(
+                  onTap: () {
+                    //  controller.logout();
+                  },
+                  title: Text("Logout"),
+                  trailing: Icon(Icons.exit_to_app),
+                ),
+              ]),
+            ),
+          )
+        ],
+      ),
     );
   }
 }

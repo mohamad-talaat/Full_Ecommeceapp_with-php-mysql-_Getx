@@ -28,6 +28,7 @@ class ProductDetails extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10)),
                 color: AppColor.secondColor,
                 onPressed: () {
+                  cartController.refreshPage();
                   Get.toNamed(AppRoute.cart);
                 },
                 child: const Text(
@@ -58,12 +59,13 @@ class ProductDetails extends StatelessWidget {
                           const SizedBox(height: 10),
                           PriceAndCountItems(
                             onAdd: () {
-                              controller.addone();
+                              controller.add();
                             },
                             onRemove: () {
-                              controller.removeone();
+                              controller.remove();
                             },
-                            price: controller.itemsModel.itemsPrice.toString(),
+                            price: controller.itemsModel.itemsPriceDiscount
+                                .toString(),
                             count: " ${controller.countitems}",
                           ),
                           const SizedBox(height: 10),

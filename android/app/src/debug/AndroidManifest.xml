@@ -7,4 +7,7 @@
     <application android:usesCleartextTraffic="true">
         <!-- possibly other elements -->
       </application>
+
+      
+
 </manifest>

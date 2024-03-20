@@ -1,9 +1,8 @@
+import 'package:e_commerce_app/core/constant/color.dart';
 import 'package:flutter/material.dart';
 
-import '../../../core/constant/color.dart';
-
 class CustomTitleHome extends StatelessWidget {
-  final String title;
+  final String title ; 
   const CustomTitleHome({Key? key, required this.title}) : super(key: key);
 
   @override
@@ -11,7 +10,7 @@ class CustomTitleHome extends StatelessWidget {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 10),
       child: Text(title,
-          style: const TextStyle(
+          style:const  TextStyle(
               fontSize: 20,
               color: AppColor.primaryColor,
               fontWeight: FontWeight.bold)),

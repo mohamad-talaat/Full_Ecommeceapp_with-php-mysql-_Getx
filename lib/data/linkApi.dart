@@ -31,6 +31,7 @@ class AppLink {
 
   static const String LinkHomeData = "$linkServerName/home.php";
   static const String LinkItemData = "$linkServerName/items/items.php";
+  static const String LinkSearch = "$linkServerName/items/search.php";
 
   ////////////////////////////////////// favorite  //////////////////////////////////////////
 
@@ -38,19 +39,23 @@ class AppLink {
   static const String removefavorite = "$linkServerName/favorite/remove.php";
   static const String viewfavorite = "$linkServerName/favorite/view.php";
   static const String deleteFromMyfavorite =
-      "$linkServerName/favorite/deletefrommyfavorite.php"; 
-      
-      
-       ////////////////////////////////////// cart  //////////////////////////////////////////
+      "$linkServerName/favorite/deletefrommyfavorite.php";
+
+  ////////////////////////////////////// cart  //////////////////////////////////////////
 
   static const String addCart = "$linkServerName/cart/add.php";
   static const String removeCart = "$linkServerName/cart/delete.php";
-  static const String viewCart  = "$linkServerName/cart/view.php";
-  static const String countcart  = "$linkServerName/cart/getcountitems.php";
+  static const String viewCart = "$linkServerName/cart/view.php";
+  static const String countcart = "$linkServerName/cart/getcountitems.php";
+  ////////////////////////////////////// address  //////////////////////////////////////////
 
+  static const String addAddress = "$linkServerName/address/add.php";
+  static const String deleteAddress = "$linkServerName/address/delete.php";
+  static const String viewAddress = "$linkServerName/address/view.php";
+  static const String updateAddress = "$linkServerName/address/edit.php";
+  ////////////////////////////////////// Coupon  //////////////////////////////////////////
 
-
-
+  static const String checkout = "$linkServerName/coupon/checkcoupon.php";
 }
 
 /*  //const String linkServerName2 = "https://waelabohamza.com/coursephp" ;

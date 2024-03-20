@@ -1,4 +1,5 @@
 import 'package:e_commerce_app/core/constant/color.dart';
+import 'package:e_commerce_app/core/pagescall/pagename.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -19,7 +20,9 @@ class HomePage extends StatelessWidget {
             //controller.ListPage[controller.currentPage],
             floatingActionButton: FloatingActionButton(
               backgroundColor: AppColor.primaryColor,
-              onPressed: () {},
+              onPressed: () {
+                Get.toNamed(AppRoute.cart);
+              },
               child: const Icon(Icons.shopping_basket_outlined, size: 35),
             ),
             floatingActionButtonLocation:

@@ -1,10 +1,11 @@
-import 'package:ecommercecourse/core/class/statusrequest.dart';
-import 'package:ecommercecourse/core/constant/routes.dart';
-import 'package:ecommercecourse/core/functions/handingdatacontroller.dart';
-import 'package:ecommercecourse/core/services/services.dart';
-import 'package:ecommercecourse/data/datasource/remote/address_data.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+
+import '../../core/class/statusrequest.dart';
+import '../../core/functions/handlingDataController.dart';
+import '../../core/pagescall/pagename.dart';
+import '../../core/services/services.dart';
+import '../../data/datasource/remote/address_data.dart';
 
 class AddAddressDetailsController extends GetxController {
   StatusRequest statusRequest = StatusRequest.none;
@@ -43,7 +44,7 @@ class AddAddressDetailsController extends GetxController {
         street!.text,
         lat!,
         long!);
-  
+
     print("=============================== Controller $response ");
 
     statusRequest = handlingData(response);
@@ -51,7 +52,7 @@ class AddAddressDetailsController extends GetxController {
     if (StatusRequest.success == statusRequest) {
       // Start backend
       if (response['status'] == "success") {
-        Get.offAllNamed(AppRoute.homepage);
+        Get.offAllNamed(AppRoute.homePage);
       } else {
         statusRequest = StatusRequest.failure;
       }

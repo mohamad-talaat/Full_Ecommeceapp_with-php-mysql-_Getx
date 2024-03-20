@@ -1,9 +1,7 @@
-import 'package:e_commerce_app/core/pagescall/pagename.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../controller/myfavorite_controller.dart';
-import '../widget/customappbar.dart';
 import '../widget/handlingdata/handlingdataview.dart';
 import '../widget/myfavorite/custom_myfavorite.dart';
 
@@ -22,18 +20,17 @@ class MyFavorite extends StatelessWidget {
             SizedBox(
               height: 10,
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: CustomAppBar(
-                titleappbar: "Find Product",
-                onPressedIcon: () {},
-                onPressedSearch: () {},
-                onPressedfavorite: () {
-                  Get.toNamed(AppRoute.myfavoritePage);
-                  //   controller.viewFavorite();
-                },
-              ),
-            ),
+            // Padding(
+            //   padding: const EdgeInsets.all(8.0),
+            //   child: CustomAppBar(
+            //     titleappbar: "Find Product",
+            //     onPressedSearch: () {},
+            //     onPressedfavorite: () {
+            //       Get.toNamed(AppRoute.myfavoritePage);
+            //       //   controller.viewFavorite();
+            //     },
+            //   ),
+            // ),
             HandlingDataView(
                 statusRequest: controller.statusRequest,
                 widget: GridView.builder(

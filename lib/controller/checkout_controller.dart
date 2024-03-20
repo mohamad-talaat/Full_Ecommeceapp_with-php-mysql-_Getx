@@ -1,11 +1,12 @@
-import 'package:ecommercecourse/core/class/statusrequest.dart';
-import 'package:ecommercecourse/core/constant/routes.dart';
-import 'package:ecommercecourse/core/functions/handingdatacontroller.dart';
-import 'package:ecommercecourse/core/services/services.dart';
-import 'package:ecommercecourse/data/datasource/remote/address_data.dart';
-import 'package:ecommercecourse/data/datasource/remote/checkout_date.dart';
-import 'package:ecommercecourse/data/model/addressmodel.dart';
+import 'package:e_commerce_app/core/class/statusrequest.dart';
+import 'package:e_commerce_app/core/services/services.dart';
+import 'package:e_commerce_app/data/datasource/remote/address_data.dart';
+import 'package:e_commerce_app/data/datasource/remote/checkout_date.dart';
+import 'package:e_commerce_app/data/model/addressmodel.dart';
 import 'package:get/get.dart';
+
+import '../core/functions/handlingDataController.dart';
+import '../core/pagescall/pagename.dart';
 
 class CheckoutController extends GetxController {
   AddressData addressData = Get.put(AddressData(Get.find()));
@@ -82,7 +83,7 @@ class CheckoutController extends GetxController {
       "pricedelivery": "10",
       "ordersprice": priceorders,
       "couponid": couponid,
-      "coupondiscount" : coupondiscount.toString() , 
+      "coupondiscount": coupondiscount.toString(),
       "paymentmethod": paymentMethod.toString()
     };
 
@@ -95,7 +96,7 @@ class CheckoutController extends GetxController {
     if (StatusRequest.success == statusRequest) {
       // Start backend
       if (response['status'] == "success") {
-        Get.offAllNamed(AppRoute.homepage);
+        Get.offAllNamed(AppRoute.homePage);
         Get.snackbar("Success", "the order was successfully");
       } else {
         statusRequest = StatusRequest.none;
