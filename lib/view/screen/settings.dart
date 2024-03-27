@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../core/constant/color.dart';
+import '../../core/pagescall/pagename.dart';
 
 class Settings extends StatelessWidget {
   const Settings({Key? key}) : super(key: key);
@@ -42,6 +43,20 @@ class Settings extends StatelessWidget {
                   // onTap: () {},
                   trailing: Switch(onChanged: (val) {}, value: true),
                   title: Text("Disable Notificatios"),
+                ),
+                ListTile(
+                  onTap: () {
+                    Get.toNamed(AppRoute.orderspending);
+                  },
+                  trailing: Icon(Icons.card_travel),
+                  title: Text("Orders"),
+                ),
+                ListTile(
+                  onTap: () {
+                    Get.toNamed(AppRoute.ordersarchive);
+                  },
+                  trailing: Icon(Icons.card_travel),
+                  title: Text("Archive"),
                 ),
                 ListTile(
                   onTap: () {

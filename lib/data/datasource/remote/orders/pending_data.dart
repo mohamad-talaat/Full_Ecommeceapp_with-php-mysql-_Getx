@@ -1,5 +1,5 @@
-import 'package:ecommercecourse/core/class/crud.dart';
-import 'package:ecommercecourse/linkapi.dart';
+import '../../../../core/class/crud.dart';
+import '../../../linkApi.dart';
 
 class OrdersPendingData {
   Crud crud;
@@ -8,6 +8,7 @@ class OrdersPendingData {
     var response = await crud.postData(AppLink.pendingorders, {"id": userid});
     return response.fold((l) => l, (r) => r);
   }
+
   deleteData(String orderid) async {
     var response = await crud.postData(AppLink.ordersdelete, {"id": orderid});
     return response.fold((l) => l, (r) => r);

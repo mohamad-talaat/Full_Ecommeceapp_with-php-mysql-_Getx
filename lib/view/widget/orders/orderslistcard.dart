@@ -1,10 +1,10 @@
-import 'package:ecommercecourse/controller/orders/pending_controller.dart';
-import 'package:ecommercecourse/core/constant/color.dart';
-import 'package:ecommercecourse/core/constant/routes.dart';
-import 'package:ecommercecourse/data/model/ordersmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:jiffy/jiffy.dart';
+
+import '../../../controller/orders/pending_controller.dart';
+import '../../../core/constant/color.dart';
+import '../../../data/model/ordersmodel.dart';
 
 class CardOrdersList extends GetView<OrdersPendingController> {
   final OrdersModel listdata;
@@ -50,24 +50,25 @@ class CardOrdersList extends GetView<OrdersPendingController> {
                           color: AppColor.primaryColor,
                           fontWeight: FontWeight.bold)),
                   const Spacer(),
-                  MaterialButton(
-                    onPressed: () {
-                      Get.toNamed(AppRoute.ordersdetails,
-                          arguments: {"ordersmodel": listdata});
-                    },
-                    color: AppColor.thirdColor,
-                    textColor: AppColor.secondColor,
-                    child: const Text("Details"),
-                  ),
+                  // MaterialButton(
+                  //   onPressed: () {
+                  //     Get.toNamed(AppRoute.ordersdetails,
+                  //         arguments: {"ordersmodel": listdata});
+                  //   },
+                  //   color: AppColor.thirdColor,
+                  //   textColor: AppColor.secondColor,
+                  //   child: const Text("Details"),
+                  // ),
                   SizedBox(width: 10),
-                 if (listdata.ordersStatus! == "0") MaterialButton(
-                    onPressed: () {
-                      controller.deleteOrder(listdata.ordersId!);
-                    },
-                    color: AppColor.thirdColor,
-                    textColor: AppColor.secondColor,
-                    child: const Text("Delete"),
-                  )
+                  if (listdata.ordersStatus! == "0")
+                    MaterialButton(
+                      onPressed: () {
+                        controller.deleteOrder(listdata.ordersId!);
+                      },
+                      color: AppColor.thirdColor,
+                      textColor: AppColor.secondColor,
+                      child: const Text("Delete"),
+                    )
                 ],
               ),
             ],

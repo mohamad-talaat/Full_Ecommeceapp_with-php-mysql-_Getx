@@ -21,6 +21,7 @@ class ItemsControllerImp extends ItemsController {
   ItemsData testData = ItemsData(Get.find());
 
   List data = [];
+  List<ItemsModel> dataModel = [];
 
   late StatusRequest statusRequest;
 

@@ -2,6 +2,8 @@ import 'package:e_commerce_app/core/Initialbinding.dart';
 import 'package:e_commerce_app/core/localization/translation.dart';
 import 'package:e_commerce_app/core/pagescall/routes.dart';
 import 'package:e_commerce_app/core/services/services.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

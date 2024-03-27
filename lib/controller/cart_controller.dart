@@ -1,4 +1,5 @@
 import 'package:e_commerce_app/core/class/statusrequest.dart';
+import 'package:e_commerce_app/core/pagescall/pagename.dart';
 import 'package:e_commerce_app/core/services/services.dart';
 import 'package:e_commerce_app/data/datasource/remote/cart_data.dart';
 import 'package:e_commerce_app/data/model/cartmodel.dart';
@@ -17,7 +18,7 @@ class CartController extends GetxController {
 
   List<CartModel> data = [];
 
-  int priceorders = 0;
+  double priceorders = 0.0;
 
   int totalcountitems = 0;
 
@@ -74,15 +75,17 @@ class CartController extends GetxController {
 
   int? discountcoupon = 0;
   String? couponname;
+  int? couponid;
   CouponModel? couponModel;
 
   checkcoupon() async {
     statusRequest = StatusRequest.loading;
     update();
-
     var response = await cartData.checkCoupon(couponcontroller!.text);
-    print("=============================== Controller $response ");
+    print("=============================== Controller response $response ");
     statusRequest = handlingData(response);
+    print(
+        "=============================== Controller statusRequest $statusRequest ");
     if (StatusRequest.success == statusRequest) {
       // Start backend
       if (response['status'] == "success") {
@@ -90,14 +93,25 @@ class CartController extends GetxController {
         couponModel = CouponModel.fromJson(datacoupon);
         discountcoupon = int.parse(couponModel!.couponDiscount.toString());
         couponname = couponModel!.couponName;
+        couponid = couponModel!.couponId;
       } else {
         // statusRequest = StatusRequest.failure;
         discountcoupon = 0;
         couponname = null;
+        Get.snackbar("Error", "Coupon Not Found");
       }
       // End
     }
     update();
+  }
+
+  goToCheckPage() {
+    if (data.isEmpty) return Get.snackbar("Warning", "You Haven`t any order");
+    Get.toNamed(AppRoute.checkout, arguments: {
+      "coupondiscount": discountcoupon.toString(),
+      "couponid": couponid ?? 0,
+      "priceorder": priceorders.toString()
+    });
   }
 
   resetVarCart() {
@@ -127,7 +141,8 @@ class CartController extends GetxController {
           data.clear();
           data.addAll(dataresponse.map((e) => CartModel.fromJson(e)));
           totalcountitems = dataresponsecountprice['totalcount'];
-          priceorders = (dataresponsecountprice['totalprice']);
+          priceorders =
+              double.parse(dataresponsecountprice['totalprice'].toString());
 
           print(priceorders);
         }

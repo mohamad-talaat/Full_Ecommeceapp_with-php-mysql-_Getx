@@ -1,10 +1,10 @@
-import 'package:ecommercecourse/core/class/statusrequest.dart';
-import 'package:ecommercecourse/core/functions/handingdatacontroller.dart';
-import 'package:ecommercecourse/core/services/services.dart';
-import 'package:ecommercecourse/data/datasource/remote/orders/archive_data.dart';
-import 'package:ecommercecourse/data/datasource/remote/orders/pending_data.dart';
-import 'package:ecommercecourse/data/model/ordersmodel.dart';
+import 'package:e_commerce_app/core/class/statusrequest.dart';
+import 'package:e_commerce_app/core/services/services.dart';
+import 'package:e_commerce_app/data/datasource/remote/orders/archive_data.dart';
+import 'package:e_commerce_app/data/model/ordersmodel.dart';
 import 'package:get/get.dart';
+
+import '../../core/functions/handlingDataController.dart';
 
 class OrdersArchiveController extends GetxController {
   OrdersArchiveData ordersArchiveData = OrdersArchiveData(Get.find());
@@ -38,7 +38,7 @@ class OrdersArchiveController extends GetxController {
       return "The Order is being Prepared ";
     } else if (val == "2") {
       return "Ready To Picked up by Delivery man";
-    }  else if (val == "3") {
+    } else if (val == "3") {
       return "On The Way";
     } else {
       return "Archive";
@@ -65,8 +65,6 @@ class OrdersArchiveController extends GetxController {
     }
     update();
   }
-
- 
 
   refrehOrder() {
     getOrders();

@@ -1,10 +1,10 @@
-import 'package:ecommercecourse/controller/orders/archive_controller.dart';
-import 'package:ecommercecourse/core/constant/color.dart';
-import 'package:ecommercecourse/core/constant/routes.dart';
-import 'package:ecommercecourse/data/model/ordersmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:jiffy/jiffy.dart';
+
+import '../../../controller/orders/archive_controller.dart';
+import '../../../core/constant/color.dart';
+import '../../../data/model/ordersmodel.dart';
 
 class CardOrdersListArchive extends GetView<OrdersArchiveController> {
   final OrdersModel listdata;
@@ -52,15 +52,15 @@ class CardOrdersListArchive extends GetView<OrdersArchiveController> {
                           color: AppColor.primaryColor,
                           fontWeight: FontWeight.bold)),
                   const Spacer(),
-                  MaterialButton(
-                    onPressed: () {
-                      Get.toNamed(AppRoute.ordersdetails,
-                          arguments: {"ordersmodel": listdata});
-                    },
-                    color: AppColor.thirdColor,
-                    textColor: AppColor.secondColor,
-                    child: const Text("Details"),
-                  ),
+                  // MaterialButton(
+                  //   onPressed: () {
+                  //     Get.toNamed(AppRoute.ordersdetails,
+                  //         arguments: {"ordersmodel": listdata});
+                  //   },
+                  //   color: AppColor.thirdColor,
+                  //   textColor: AppColor.secondColor,
+                  //   child: const Text("Details"),
+                  // ),
                 ],
               ),
             ],

@@ -1,5 +1,6 @@
-import 'package:ecommercecourse/core/class/crud.dart';
-import 'package:ecommercecourse/linkapi.dart';
+import 'package:e_commerce_app/core/class/crud.dart';
+
+import '../../../linkApi.dart';
 
 class OrdersArchiveData {
   Crud crud;

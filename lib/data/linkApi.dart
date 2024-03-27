@@ -54,8 +54,16 @@ class AppLink {
   static const String viewAddress = "$linkServerName/address/view.php";
   static const String updateAddress = "$linkServerName/address/edit.php";
   ////////////////////////////////////// Coupon  //////////////////////////////////////////
+  static const String checkcoupon = "$linkServerName/coupon/checkcoupon.php";
 
-  static const String checkout = "$linkServerName/coupon/checkcoupon.php";
+  ////////////////////////////////////// Checkout  //////////////////////////////////////////
+
+  static const String checkout = "$linkServerName/orders/checkout.php";
+
+  static const String pendingorders = "$linkServerName/orders/pending.php";
+  static const String ordersarchive = "$linkServerName/orders/archive.php";
+  static const String ordersdetails = "$linkServerName/orders/details.php";
+  static const String ordersdelete = "$linkServerName/orders/delete.php";
 }
 
 /*  //const String linkServerName2 = "https://waelabohamza.com/coursephp" ;

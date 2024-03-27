@@ -20,8 +20,8 @@ class CheckoutController extends GetxController {
   String? deliveryType;
   String addressid = "0";
 
-  late String couponid;
-  late String coupondiscount;
+  late int couponid;
+  String? coupondiscount;
   late String priceorders;
 
   List<AddressModel> dataaddress = [];
@@ -43,14 +43,10 @@ class CheckoutController extends GetxController {
 
   getShippingAddress() async {
     statusRequest = StatusRequest.loading;
-
     var response = await addressData
         .getData(myServices.sharedPreferences.getString("id")!);
-
     print("=============================== Controller $response ");
-
     statusRequest = handlingData(response);
-
     if (StatusRequest.success == statusRequest) {
       // Start backend
       if (response['status'] == "success") {
@@ -71,9 +67,7 @@ class CheckoutController extends GetxController {
     if (deliveryType == null) {
       return Get.snackbar("Error", "Please select a order Type");
     }
-
     statusRequest = StatusRequest.loading;
-
     update();
 
     Map data = {
@@ -84,12 +78,13 @@ class CheckoutController extends GetxController {
       "ordersprice": priceorders,
       "couponid": couponid,
       "coupondiscount": coupondiscount.toString(),
-      "paymentmethod": paymentMethod.toString()
+      "paymentmethod": paymentMethod.toString(),
+      //   "orders_totalprice": "1500" //totalPrice.toString()
     };
 
     var response = await checkoutData.checkout(data);
 
-    print("=============================== Controller $response ");
+    print("=============================== Controller for checkout $response ");
 
     statusRequest = handlingData(response);
 
@@ -107,11 +102,14 @@ class CheckoutController extends GetxController {
     update();
   }
 
+//  var totalPrice = 0.0;
+
   @override
   void onInit() {
-//    couponid = Get.arguments['couponid'];
-//     priceorders = Get.arguments['priceorder'];
-//     coupondiscount = Get.arguments['discountcoupon'].toString();
+    // totalPrice = Get.arguments['totalPrice'];
+    couponid = Get.arguments['couponid'];
+    priceorders = Get.arguments['priceorder'];
+    coupondiscount = Get.arguments['coupondiscount'].toString();
 
     getShippingAddress();
     super.onInit();

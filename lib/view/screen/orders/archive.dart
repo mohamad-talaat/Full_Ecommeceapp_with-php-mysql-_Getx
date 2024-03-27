@@ -1,10 +1,9 @@
-import 'package:ecommercecourse/controller/orders/archive_controller.dart';
-import 'package:ecommercecourse/controller/orders/pending_controller.dart';
-import 'package:ecommercecourse/core/class/handlingdataview.dart'; 
-import 'package:ecommercecourse/view/widget/orders/orderslistcard.dart';
-import 'package:ecommercecourse/view/widget/orders/orderslistcardarchive.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart'; 
+import 'package:get/get.dart';
+
+import '../../../controller/orders/archive_controller.dart';
+import '../../widget/handlingdata/handlingdataview.dart';
+import '../../widget/orders/orderslistcardarchive.dart';
 
 class OrdersArchiveView extends StatelessWidget {
   const OrdersArchiveView({Key? key}) : super(key: key);
@@ -16,12 +15,14 @@ class OrdersArchiveView extends StatelessWidget {
           title: const Text('Orders'),
         ),
         body: Container(
-          padding:const  EdgeInsets.all(10),
+          padding: const EdgeInsets.all(10),
           child: GetBuilder<OrdersArchiveController>(
-              builder: ((controller) => HandlingDataView(statusRequest: controller.statusRequest, widget: ListView.builder(
+              builder: ((controller) => HandlingDataView(
+                  statusRequest: controller.statusRequest,
+                  widget: ListView.builder(
                     itemCount: controller.data.length,
-                    itemBuilder: ((context, index) =>
-                        CardOrdersListArchive(listdata: controller.data[index])),
+                    itemBuilder: ((context, index) => CardOrdersListArchive(
+                        listdata: controller.data[index])),
                   )))),
         ));
   }

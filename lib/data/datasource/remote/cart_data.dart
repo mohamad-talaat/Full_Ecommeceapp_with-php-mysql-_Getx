@@ -36,10 +36,10 @@ class CartData {
   }
 
   checkCoupon(String couponname) async {
-    var response = await crud.postData(AppLink.checkout, {
-      "couponname": couponname,
-    });
-
+    var response =
+        await crud.postData(AppLink.checkcoupon, {"couponname": couponname});
+    print("problem in checkcoupon");
     return response.fold((l) => l, (r) => r);
+    print("problem in response.fold");
   }
 }

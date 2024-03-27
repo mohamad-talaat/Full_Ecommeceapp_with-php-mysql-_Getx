@@ -54,6 +54,9 @@ class LoginControllerImp extends LoginController {
                 .setString("email", response['data']['users_email']);
             myServices.sharedPreferences
                 .setString("phone", response['data']['users_phone']);
+            FirebaseMessaging.instance.subscribeToTopic("users");
+            String usersid = myServices.sharedPreferences.getString("id")!;
+            FirebaseMessaging.instance.subscribeToTopic("users${usersid}");
           } else {
             Get.offNamed(AppRoute.verfiyCodeSignUp,
                 arguments: {"email": email.text});

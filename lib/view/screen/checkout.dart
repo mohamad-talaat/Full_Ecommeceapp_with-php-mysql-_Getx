@@ -1,4 +1,3 @@
-import 'package:e_commerce_app/controller/checkout_controller.dart';
 import 'package:e_commerce_app/core/constant/color.dart';
 import 'package:e_commerce_app/core/constant/imgaeasset.dart';
 import 'package:e_commerce_app/view/widget/checkout/carddeliveerytype.dart';
@@ -7,6 +6,7 @@ import 'package:e_commerce_app/view/widget/checkout/cardshippingaddress.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../controller/checkout_controller.dart';
 import '../widget/handlingdata/handlingdataview.dart';
 
 class Checkout extends StatelessWidget {
