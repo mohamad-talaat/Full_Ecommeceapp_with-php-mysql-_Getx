@@ -75,8 +75,8 @@ class CheckoutController extends GetxController {
       "addressid": addressid.toString(),
       "orderstype": deliveryType.toString(),
       "pricedelivery": "10",
-      "ordersprice": priceorders,
-      "couponid": couponid,
+      "ordersprice": priceorders.toString(),
+      "couponid": couponid.toString(),
       "coupondiscount": coupondiscount.toString(),
       "paymentmethod": paymentMethod.toString(),
       //   "orders_totalprice": "1500" //totalPrice.toString()

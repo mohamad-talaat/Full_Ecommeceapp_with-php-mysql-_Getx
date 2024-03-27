@@ -116,7 +116,7 @@ class CartController extends GetxController {
 
   resetVarCart() {
     totalcountitems = 0;
-    priceorders = 0;
+    priceorders = 0.0;
     data.clear();
   }
 

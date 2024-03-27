@@ -28,8 +28,8 @@ class ProductDetails extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10)),
                 color: AppColor.secondColor,
                 onPressed: () {
-                  cartController.refreshPage();
                   Get.toNamed(AppRoute.cart);
+                  cartController.refreshPage();
                 },
                 child: const Text(
                   "Go To Cart",
