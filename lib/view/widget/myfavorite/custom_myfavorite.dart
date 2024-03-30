@@ -30,7 +30,7 @@ class CustomMyFavorite extends GetView<MyFavoriteController> {
                     tag: "${itemsModel.itemsId}",
                     child: CachedNetworkImage(
                       imageUrl:
-                          AppLink.imagestItems + "/" + itemsModel.itemsImage!,
+                          "${AppLink.imagestItems}/${itemsModel.itemsImage!}",
                       height: 100,
                       fit: BoxFit.fill,
                     ),

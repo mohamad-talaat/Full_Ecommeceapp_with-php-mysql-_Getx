@@ -1,6 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:e_commerce_app/controller/offers_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 import '../../../controller/favorite_controller.dart';
 import '../../../controller/items_controller.dart';
 import '../../../core/constant/color.dart';
@@ -9,17 +11,16 @@ import '../../../core/functions/translateddatabase.dart';
 import '../../../data/linkApi.dart';
 import '../../../data/model/itemmodel.dart';
 
-class CustomListItems extends GetView<ItemsControllerImp> {
+class CustomListItemsOffers extends GetView<OffersController> {
   final ItemsModel itemsModel;
   // final bool active;
-  const CustomListItems({Key? key, required this.itemsModel}) : super(key: key);
+  const CustomListItemsOffers({Key? key, required this.itemsModel}) : super(key: key);
 
   @override
-
   Widget build(BuildContext context) {
     return InkWell(
         onTap: () {
-          controller.goToPageProductDetails(itemsModel);
+       //   controller.goToPageProductDetails(itemsModel);
         },
         child: Card(
           child: Stack(
@@ -33,9 +34,7 @@ class CustomListItems extends GetView<ItemsControllerImp> {
                       Hero(
                         tag: "${itemsModel.itemsId}",
                         child: CachedNetworkImage(
-                          imageUrl: AppLink.imagestItems +
-                              "/" +
-                              itemsModel.itemsImage!,
+                          imageUrl: "${AppLink.imagestItems}/${itemsModel.itemsImage!}",
                           height: 100,
                           fit: BoxFit.fill,
                         ),

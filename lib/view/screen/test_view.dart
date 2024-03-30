@@ -12,7 +12,7 @@ class TestView extends StatelessWidget {
     Get.put(TestController());
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: Text("Title")),
+        title: const Center(child: Text("Title")),
         backgroundColor: AppColor.primaryColor,
       ),
       body: GetBuilder<TestController>(builder: (controller) {

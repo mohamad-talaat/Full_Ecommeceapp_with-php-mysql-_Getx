@@ -1,35 +1,29 @@
 import 'package:e_commerce_app/view/screen/bottomnavbarscreen/home.dart';
+import 'package:e_commerce_app/view/screen/notification.dart';
+import 'package:e_commerce_app/view/screen/offers.dart';
 import 'package:e_commerce_app/view/screen/settings.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+// ignore: camel_case_types
 abstract class homescreenController extends GetxController {
   changePage(int currentpage);
 }
 
+// ignore: camel_case_types
 class homescreenControllerImp extends homescreenController {
-  List<Widget> ListPage = [
+  // ignore: non_constant_identifier_names
+  List<Widget> ListPage = <Widget>[
     const Home(),
-    const Column(
-      children: [
-        Center(
-          child: Text("notifi"),
-        )
-      ],
-    ),
-    const Column(
-      children: [
-        Center(
-          child: Text("favourite"),
-        )
-      ],
-    ),
+    
+    const NotificationView(),
+    const Offers(),
     const Settings(),
   ];
   List bottomNav = [
     {"name": "Home", "icon": Icons.home},
     {"name": "notific.. ", "icon": Icons.notifications_active},
-    {"name": "favorite", "icon": Icons.favorite},
+    {"name": "favorite", "icon": Icons.local_offer_outlined},
     {"name": "settings", "icon": Icons.settings},
   ];
 /*   List ListtitleButton = [
@@ -51,8 +45,4 @@ class homescreenControllerImp extends homescreenController {
     currentpage = index;
     update();
   }
-
-  // void onInit() {
-  //   super.onInit();
-  // }
 }

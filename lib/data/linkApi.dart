@@ -64,6 +64,18 @@ class AppLink {
   static const String ordersarchive = "$linkServerName/orders/archive.php";
   static const String ordersdetails = "$linkServerName/orders/details.php";
   static const String ordersdelete = "$linkServerName/orders/delete.php";
+  
+  ////////////////////////////////////// notifications  //////////////////////////////////////////
+  
+  static const String notification = "$linkServerName/notification.php";
+ 
+  ////////////////////////////////////// offers  //////////////////////////////////////////
+  
+  static const String offers = "$linkServerName/offers.php";
+
+
+
+
 }
 
 /*  //const String linkServerName2 = "https://waelabohamza.com/coursephp" ;

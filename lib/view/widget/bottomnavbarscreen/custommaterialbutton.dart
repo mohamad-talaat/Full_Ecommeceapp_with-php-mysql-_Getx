@@ -28,7 +28,7 @@ class CustomMaterialButton extends StatelessWidget {
               color: active == true ? AppColor.primaryColor : Colors.black,
             ),
             Text(
-              "${textButton}",
+              textButton,
               style: TextStyle(
                 color: active == true ? AppColor.primaryColor : Colors.black,
               ),

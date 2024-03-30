@@ -1,11 +1,13 @@
 import 'package:e_commerce_app/core/class/crud.dart';
 import 'package:e_commerce_app/data/linkApi.dart';
 
-class NotificationData {
+class OffersData {
   Crud crud;
-  NotificationData(this.crud);
-  getData(String id) async {
-    var response = await crud.postData(AppLink.notification, {"id": id});
+  OffersData(this.crud);
+
+  offerData() async {
+    var response = await crud.postData(AppLink.offers, {});
+
     return response.fold((l) => l, (r) => r);
   }
 }

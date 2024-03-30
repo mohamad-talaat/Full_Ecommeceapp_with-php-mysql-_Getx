@@ -39,46 +39,46 @@ class OrdersModel {
       this.addressLong});
 
   OrdersModel.fromJson(Map<String, dynamic> json) {
-    ordersId = json['orders_id'];
-    ordersUsersid = json['orders_usersid'];
-    ordersAddress = json['orders_address'];
-    ordersType = json['orders_type'];
-    ordersPricedelivery = json['orders_pricedelivery'];
-    ordersPrice = json['orders_price'];
-    ordersTotalprice = json['orders_totalprice'];
-    ordersCoupon = json['orders_coupon'];
-    ordersPaymentmethod = json['orders_paymentmethod'];
-    ordersStatus = json['orders_status'];
-    ordersDatetime = json['orders_datetime'];
-    addressId = json['address_id'];
-    addressUsersid = json['address_usersid'];
-    addressName = json['address_name'];
-    addressCity = json['address_city'];
+    ordersId = json['orders_id'].toString();
+    ordersUsersid = json['orders_usersid'].toString();
+    ordersAddress = json['orders_address'].toString();
+    ordersType = json['orders_type'].toString();
+    ordersPricedelivery = json['orders_pricedelivery'].toString();
+    ordersPrice = json['orders_price'].toString();
+    ordersTotalprice = json['orders_totalprice'].toString();
+    ordersCoupon = json['orders_coupon'].toString();
+    ordersPaymentmethod = json['orders_paymentmethod'].toString();
+    ordersStatus = json['orders_status'].toString();
+    ordersDatetime = json['orders_datetime'].toString();
+    addressId = json['address_id'].toString();
+    addressUsersid = json['address_usersid'].toString();
+    addressName = json['address_name'].toString();
+    addressCity = json['address_city'].toString();
     addressStreet = json['address_street'];
-    addressLat = json['address_lat'];
-    addressLong = json['address_long'];
+    addressLat = json['address_lat'].toString();
+    addressLong = json['address_long'].toString();
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['orders_id'] = this.ordersId;
-    data['orders_usersid'] = this.ordersUsersid;
-    data['orders_address'] = this.ordersAddress;
-    data['orders_type'] = this.ordersType;
-    data['orders_pricedelivery'] = this.ordersPricedelivery;
-    data['orders_price'] = this.ordersPrice;
-    data['orders_totalprice'] = this.ordersTotalprice;
-    data['orders_coupon'] = this.ordersCoupon;
-    data['orders_paymentmethod'] = this.ordersPaymentmethod;
-    data['orders_status'] = this.ordersStatus;
-    data['orders_datetime'] = this.ordersDatetime;
-    data['address_id'] = this.addressId;
-    data['address_usersid'] = this.addressUsersid;
-    data['address_name'] = this.addressName;
-    data['address_city'] = this.addressCity;
-    data['address_street'] = this.addressStreet;
-    data['address_lat'] = this.addressLat;
-    data['address_long'] = this.addressLong;
+    final Map<String, dynamic> data = Map<String, dynamic>();
+    data['orders_id'] = ordersId;
+    data['orders_usersid'] = ordersUsersid;
+    data['orders_address'] = ordersAddress;
+    data['orders_type'] = ordersType;
+    data['orders_pricedelivery'] = ordersPricedelivery;
+    data['orders_price'] = ordersPrice;
+    data['orders_totalprice'] = ordersTotalprice;
+    data['orders_coupon'] = ordersCoupon;
+    data['orders_paymentmethod'] = ordersPaymentmethod;
+    data['orders_status'] = ordersStatus;
+    data['orders_datetime'] = ordersDatetime;
+    data['address_id'] = addressId;
+    data['address_usersid'] = addressUsersid;
+    data['address_name'] = addressName;
+    data['address_city'] = addressCity;
+    data['address_street'] = addressStreet;
+    data['address_lat'] = addressLat;
+    data['address_long'] = addressLong;
     return data;
   }
 }

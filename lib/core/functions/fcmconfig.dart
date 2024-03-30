@@ -22,16 +22,20 @@ PirmitionNotifications() async {
 fcmNotification() {
   FirebaseMessaging.onMessage.listen((message) {
     print('onMessage========================== ${message.data}');
-    FlutterRingtonePlayer.playNotification();
-    Get.snackbar(message.notification!.title!, message.notification!.body!);
-  });
-
-  FirebaseMessaging.onMessageOpenedApp.listen((message) {
-    print('onMessageOpenedApp========================== ${message.data}');
+    Get.snackbar(
+      message.notification!.title.toString(),
+      message.notification!.body.toString(),
+    );  
+     FlutterRingtonePlayer.playNotification();
     refreshPageNotification(message.data);
   });
+
+
+
 }
-refreshPageNotification(data) { //good instead of Stream Firebase // تعمل ريفرش للصفحة بالمعلومات المطلوبه يتعملها ابديت  
+
+refreshPageNotification(data) {
+  //good instead of Stream Firebase // تعمل ريفرش للصفحة بالمعلومات المطلوبه يتعملها ابديت
   print("============================= page id ");
   print(data['pageid']);
   print("============================= page name ");
@@ -43,15 +47,14 @@ refreshPageNotification(data) { //good instead of Stream Firebase // تعمل ر
       data['pagename'] == "refreshorderpending") {
     OrdersPendingController controller = Get.find();
     controller.refrehOrder();
-  } 
-  else if (Get.currentRoute == "/orderscompleted" &&
+  } else if (Get.currentRoute == "/orderscompleted" &&
       data['pagename'] == "refreshordercompleted") {
     OrdersPendingController controller = Get.find();
     controller.refrehOrder();
   }
 }
+// Firebase + stream
+// Socket io
+// Notification refresh
 
-
-// Firebase + stream 
-// Socket io 
-// Notification refresh 
+// ...

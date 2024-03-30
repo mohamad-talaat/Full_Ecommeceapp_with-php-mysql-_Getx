@@ -12,6 +12,9 @@ import 'core/localization/changelocal.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await initialServices();
+  FirebaseMessaging.instance.getToken().then((value) {
+    print(value);
+  });
   runApp(const MyApp());
 }
 

@@ -68,6 +68,7 @@ class OrdersPendingController extends GetxController {
 
   deleteOrder(String orderid) async {
     data.clear();
+    
     statusRequest = StatusRequest.loading;
     update();
     var response = await ordersPendingData.deleteData(orderid);

@@ -47,7 +47,7 @@ class CardOrdersListArchive extends GetView<OrdersArchiveController> {
               const Divider(),
               Row(
                 children: [
-                  Text("Total Price : ${listdata.ordersId} \$ ",
+                  Text("Total Price : ${listdata.ordersTotalprice} \$ ",
                       style: const TextStyle(
                           color: AppColor.primaryColor,
                           fontWeight: FontWeight.bold)),
