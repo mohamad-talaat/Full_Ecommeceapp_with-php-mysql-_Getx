@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../controller/favorite_controller.dart';
-import '../../../controller/items_controller.dart';
 import '../../../core/constant/color.dart';
 import '../../../core/constant/imgaeasset.dart';
 import '../../../core/functions/translateddatabase.dart';
@@ -14,13 +13,14 @@ import '../../../data/model/itemmodel.dart';
 class CustomListItemsOffers extends GetView<OffersController> {
   final ItemsModel itemsModel;
   // final bool active;
-  const CustomListItemsOffers({Key? key, required this.itemsModel}) : super(key: key);
+  const CustomListItemsOffers({Key? key, required this.itemsModel})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
         onTap: () {
-       //   controller.goToPageProductDetails(itemsModel);
+          //   controller.goToPageProductDetails(itemsModel);
         },
         child: Card(
           child: Stack(
@@ -34,7 +34,8 @@ class CustomListItemsOffers extends GetView<OffersController> {
                       Hero(
                         tag: "${itemsModel.itemsId}",
                         child: CachedNetworkImage(
-                          imageUrl: "${AppLink.imagestItems}/${itemsModel.itemsImage!}",
+                          imageUrl:
+                              "${AppLink.imagestItems}/${itemsModel.itemsImage!}",
                           height: 100,
                           fit: BoxFit.fill,
                         ),

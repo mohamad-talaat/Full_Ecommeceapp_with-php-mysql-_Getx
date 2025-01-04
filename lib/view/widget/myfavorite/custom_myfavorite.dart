@@ -74,9 +74,10 @@ class CustomMyFavorite extends GetView<MyFavoriteController> {
                               fontFamily: "sans")),
                       IconButton(
                           onPressed: () {
-                            controller.deleteMyfavorite(itemsModel.favoriteId.toString());
+                            controller.deleteMyfavorite(
+                                itemsModel.favoriteId.toString());
                           },
-                          icon: Icon(Icons.delete))
+                          icon: const Icon(Icons.delete))
                     ],
                   )
                 ]),

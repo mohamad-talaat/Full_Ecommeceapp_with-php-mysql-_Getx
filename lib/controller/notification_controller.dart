@@ -18,7 +18,7 @@ class NotificationController extends GetxController {
     var response = await notificationData
         .getData(myServices.sharedPreferences.getString("id")!);
 
-    print("=============================== Controller $response ");
+    logger.w("=============================== Controller $response ");
     statusRequest = handlingData(response);
     if (StatusRequest.success == statusRequest) {
       // Start backend

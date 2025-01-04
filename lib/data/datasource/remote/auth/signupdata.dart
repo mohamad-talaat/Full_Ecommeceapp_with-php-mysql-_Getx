@@ -5,7 +5,7 @@ class SignupData {
   late Crud crud;
   SignupData(this.crud);
   postData(String name, String email, String password, String phone) async {
-   // print("the problem <<<<<<<<<in Link Data");
+    // debugPrint("the problem <<<<<<<<<in Link Data");
 
     var response = await crud.postData(AppLink.LinkSignUp, {
       "name": name,
@@ -13,7 +13,7 @@ class SignupData {
       "password": password,
       "phone": phone,
     });
-    //print("the problem <<<<<<<<<in get Data");
+    //debugPrint("the problem <<<<<<<<<in get Data");
     return response.fold((l) => l, (r) => r);
   }
 }

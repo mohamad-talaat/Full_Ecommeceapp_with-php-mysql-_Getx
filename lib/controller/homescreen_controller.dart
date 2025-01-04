@@ -15,7 +15,6 @@ class homescreenControllerImp extends homescreenController {
   // ignore: non_constant_identifier_names
   List<Widget> ListPage = <Widget>[
     const Home(),
-    
     const NotificationView(),
     const Offers(),
     const Settings(),
@@ -41,6 +40,7 @@ class homescreenControllerImp extends homescreenController {
   ];
  */
   int currentpage = 0;
+  @override
   changePage(int index) {
     currentpage = index;
     update();

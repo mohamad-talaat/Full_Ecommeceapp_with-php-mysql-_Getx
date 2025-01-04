@@ -3,6 +3,7 @@ import 'package:e_commerce_app/core/functions/handlingDataController.dart';
 import 'package:e_commerce_app/data/datasource/remote/home_data.dart';
 import 'package:e_commerce_app/data/datasource/remote/offers_data.dart';
 import 'package:e_commerce_app/data/model/itemmodel.dart';
+import 'package:e_commerce_app/core/services/services.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -11,8 +12,8 @@ class OffersController extends GetxController {
   HomeData homedata = HomeData(Get.find());
 
   StatusRequest statusRequest = StatusRequest.none;
-List data = [];
-List<ItemsModel> dataModel = [];
+  List data = [];
+  List<ItemsModel> dataModel = [];
 
   getOffers() async {
     statusRequest = StatusRequest.loading;
@@ -20,9 +21,9 @@ List<ItemsModel> dataModel = [];
     statusRequest = handlingData(response);
     if (StatusRequest.success == statusRequest) {
       if (response["status"] == "success") {
-       // print("=============================== Controller $response ");
-       // List data = response['data'];
-      //  print(data);
+        // logger.w("=============================== Controller $response ");
+        // List data = response['data'];
+        //  debugPrint(data);
         data.addAll(response['data'].map((e) => ItemsModel.fromJson(e)));
         //  data.addAll(response['data']);
       } else {
@@ -51,7 +52,7 @@ List<ItemsModel> dataModel = [];
   searchData() async {
     statusRequest = StatusRequest.loading;
     var response = await homedata.searchData(search.toString());
-    print("=============================== Controller $response ");
+    logger.w("=============================== Controller $response ");
     statusRequest = handlingData(response);
     if (StatusRequest.success == statusRequest) {
       data.clear();

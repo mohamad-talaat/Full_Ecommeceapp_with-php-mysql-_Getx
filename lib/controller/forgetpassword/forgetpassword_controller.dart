@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/core/services/services.dart';
 import 'package:e_commerce_app/data/datasource/remote/forgetpassword/checkemaildata.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -22,7 +23,7 @@ class ForgetPasswordControllerImp extends ForgetPasswordController {
         StatusRequest.loading; //اول ما نستدعي الداتا بيكون ف مرحلة التحميل لسه
     var response = await testcheckEmailData.postData(email.text);
     // ignore: avoid_print
-    print("=============================== Controller $response ");
+    logger.w("=============================== Controller $response ");
     statusRequest = handlingData(response);
     if (StatusRequest.success == statusRequest) {
       if (response["status"] == "success") {

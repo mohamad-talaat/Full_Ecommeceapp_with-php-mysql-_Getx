@@ -35,32 +35,35 @@ class LoginControllerImp extends LoginController {
     if (formstate.currentState!.validate()) {
       statusRequest = StatusRequest.loading;
       update();
-      var response = await testLoginData.postData(email.text, password.text);
-      print("=============================== Controller $response ");
+      var response =
+          await testLoginData.postData(email.text.trim(), password.text.trim());
+      logger.w("=============================== Controller $response ");
       statusRequest = handlingData(response);
       if (StatusRequest.success == statusRequest) {
         // then the data exist and no problem ::::
         if (response['status'] == "success") {
           // data.addAll(response['data']);
-          if (response['data']['users_approve'] == 1) {
-            myServices.sharedPreferences.setString("step", "2");
-            Get.offNamed(AppRoute.homePage);
-            myServices.sharedPreferences
-                .setString("id", response['data']['users_id'].toString())
-                .toString();
-            myServices.sharedPreferences
-                .setString("name", response['data']['users_name']);
-            myServices.sharedPreferences
-                .setString("email", response['data']['users_email']);
-            myServices.sharedPreferences
-                .setString("phone", response['data']['users_phone']);
-            FirebaseMessaging.instance.subscribeToTopic("users");
-            String usersid = myServices.sharedPreferences.getString("id")!;
-            FirebaseMessaging.instance.subscribeToTopic("users${usersid}");
-          } else {
-            Get.offNamed(AppRoute.verfiyCodeSignUp,
-                arguments: {"email": email.text});
-          }
+          // if (response['data']['users_approve'] == 1) {
+          myServices.sharedPreferences.setString("step", "2");
+          Get.offNamed(AppRoute.homePage);
+          myServices.sharedPreferences
+              .setString("id", response['data']['users_id'].toString())
+              .toString();
+          myServices.sharedPreferences
+              .setString("name", response['data']['users_name']);
+          myServices.sharedPreferences
+              .setString("email", response['data']['users_email']);
+          myServices.sharedPreferences
+              .setString("phone", response['data']['users_phone']);
+          FirebaseMessaging.instance.subscribeToTopic("users");
+          String usersid = myServices.sharedPreferences.getString("id")!;
+          FirebaseMessaging.instance.subscribeToTopic("users$usersid");
+          // }
+
+          // else {
+          //   Get.offNamed(AppRoute.verfiyCodeSignUp,
+          //       arguments: {"email": email.text});
+          // }
         } else {
           Get.defaultDialog(
               title: "Warning",
@@ -71,9 +74,9 @@ class LoginControllerImp extends LoginController {
       }
       update();
 
-      //   print("Valid");
+      //   debugPrint("Valid");
       // } else {
-      //   print("Not Valid");
+      //   debugPrint("Not Valid");
     }
   }
 
@@ -85,7 +88,7 @@ class LoginControllerImp extends LoginController {
   @override
   void onInit() {
     FirebaseMessaging.instance.getToken().then((value) {
-      print(value);
+      debugPrint(value);
       //  String? token = value;
     });
     email = TextEditingController();

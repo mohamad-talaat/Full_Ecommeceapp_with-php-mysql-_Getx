@@ -24,7 +24,7 @@ class VerfiyCodeSignUp extends StatelessWidget {
           title: Text('Verification Code',
               style: Theme.of(context)
                   .textTheme
-                  .headline1!
+                  .displayLarge!
                   .copyWith(color: AppColor.grey)),
         ),
         body: GetBuilder<VerifyCodeSignUpControllerImp>(
@@ -60,9 +60,9 @@ class VerfiyCodeSignUp extends StatelessWidget {
                 const SizedBox(height: 30),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25),
-                  child: Container(
+                  child: SizedBox(
                     width: double.infinity,
-                    child: ElevatedButton( 
+                    child: ElevatedButton(
                         onPressed: () {
                           controller.Resend();
                         },

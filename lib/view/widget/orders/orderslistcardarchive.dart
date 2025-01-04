@@ -28,6 +28,8 @@ class CardOrdersListArchive extends GetView<OrdersArchiveController> {
                   const Spacer(),
                   // Text(listdata.ordersDatetime!)
                   Text(
+                    //  Jiffy.parse(listdata.ordersDatetime!).format(pattern: 'MMMM do yyyy, h:mm:ss a') ,
+
                     Jiffy(listdata.ordersDatetime!, "yyyy-MM-dd").fromNow(),
                     style: const TextStyle(
                         color: AppColor.primaryColor,

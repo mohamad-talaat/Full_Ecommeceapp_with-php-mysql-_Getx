@@ -3,6 +3,7 @@ import 'package:e_commerce_app/core/functions/handlingDataController.dart';
 import 'package:e_commerce_app/core/services/services.dart';
 import 'package:e_commerce_app/data/datasource/remote/itemdata.dart';
 import 'package:e_commerce_app/data/model/itemmodel.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 abstract class ItemsController extends GetxController {
@@ -55,7 +56,7 @@ class ItemsControllerImp extends ItemsController {
     statusRequest = StatusRequest.loading;
     var response = await testData.getData(
         categoryid, myServices.sharedPreferences.getString("id").toString());
-    print("==========///===================////== Controller $response ");
+    debugPrint("==========///===================////== Controller $response ");
     statusRequest = handlingData(response);
     if (StatusRequest.success == statusRequest) {
       // Start backend

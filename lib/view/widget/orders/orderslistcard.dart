@@ -27,6 +27,8 @@ class CardOrdersList extends GetView<OrdersPendingController> {
                   const Spacer(),
                   // Text(listdata.ordersDatetime!)
                   Text(
+                    //  Jiffy.parse(listdata.ordersDatetime!).format(pattern: 'MMMM do yyyy, h:mm:ss a') ,
+
                     Jiffy(listdata.ordersDatetime!, "yyyy-MM-dd").fromNow(),
                     style: const TextStyle(
                         color: AppColor.primaryColor,
@@ -63,7 +65,7 @@ class CardOrdersList extends GetView<OrdersPendingController> {
                     textColor: AppColor.secondColor,
                     child: const Text("Details"),
                   ),
-                  SizedBox(width: 10),
+                  const SizedBox(width: 10),
                   if (listdata.ordersStatus! == "0")
                     MaterialButton(
                       onPressed: () {

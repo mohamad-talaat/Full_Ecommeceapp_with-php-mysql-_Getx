@@ -27,7 +27,7 @@ class Login extends StatelessWidget {
           title: Text('Sign In',
               style: Theme.of(context)
                   .textTheme
-                  .headline1!
+                  .displayLarge!
                   .copyWith(color: AppColor.grey)),
         ),
         body: WillPopScope(
@@ -42,10 +42,6 @@ class Login extends StatelessWidget {
                     child: Form(
                       key: controller.formstate,
                       child: ListView(children: [
-                            
-
-
-
                         const LogoAuth(),
                         const SizedBox(height: 20),
                         CustomTextTitleAuth(text: "10".tr),

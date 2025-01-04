@@ -13,7 +13,7 @@ class TestController extends GetxController {
     statusRequest =
         StatusRequest.loading; //اول ما نستدعي الداتا بيكون ف مرحلة التحميل لسه
     var response = await testData.getData();
-    print("=============================== Controller $response ");
+    // logger.w("=============================== Controller $response ");
     statusRequest = handlingData(response);
     if (StatusRequest.success == statusRequest) {
       if (response["status"] == "success") data.addAll(response['data']);

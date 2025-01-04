@@ -1,4 +1,5 @@
 // ignore_for_file: avoid_print
+import 'package:e_commerce_app/core/services/services.dart';
 
 import 'package:e_commerce_app/core/pagescall/pagename.dart';
 import 'package:flutter/material.dart';
@@ -34,7 +35,7 @@ class ResetPasswordControllerImp extends ResetPasswordController {
       update();
       var response =
           await testresetPasswordData.postData(email!, password.text);
-      print("=============================== Controller $response ");
+      logger.w("=============================== Controller $response ");
       statusRequest = handlingData(response);
       if (StatusRequest.success == statusRequest) {
         if (response["status"] == "success") {

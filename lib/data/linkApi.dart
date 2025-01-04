@@ -11,7 +11,7 @@ class AppLink {
 ////////////////////////////////////// Auth  //////////////////////////////////////////
 
   static const String LinkSignUp = "$linkServerName/auth/signup.php";
-  static const String LinkLogin = "$linkServerName/auth/signin.php";
+  static const String LinkLogin = "$linkServerName/auth/login.php";
   static const String LinkVerfiyCodeSignUp =
       "$linkServerName/auth/verfiycode.php";
 
@@ -39,7 +39,7 @@ class AppLink {
   static const String removefavorite = "$linkServerName/favorite/remove.php";
   static const String viewfavorite = "$linkServerName/favorite/view.php";
   static const String deleteFromMyfavorite =
-      "$linkServerName/favorite/deletefrommyfavorite.php";
+      "$linkServerName/favorite/deletefromfavroite.php";
 
   ////////////////////////////////////// cart  //////////////////////////////////////////
 

@@ -15,7 +15,6 @@ class CustomListItems extends GetView<ItemsControllerImp> {
   const CustomListItems({Key? key, required this.itemsModel}) : super(key: key);
 
   @override
-
   Widget build(BuildContext context) {
     return InkWell(
         onTap: () {
@@ -33,21 +32,23 @@ class CustomListItems extends GetView<ItemsControllerImp> {
                       Hero(
                         tag: "${itemsModel.itemsId}",
                         child: CachedNetworkImage(
-                          imageUrl: AppLink.imagestItems +
-                              "/" +
-                              itemsModel.itemsImage!,
+                          imageUrl: "${AppLink.imagestItems}/${itemsModel.itemsImage!}",
                           height: 100,
                           fit: BoxFit.fill,
                         ),
                       ),
                       const SizedBox(height: 10),
-                      Text(
-                          translateDatabase(
-                              itemsModel.itemsNameAr, itemsModel.itemsName),
-                          style: const TextStyle(
-                              color: AppColor.black,
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold)),
+                      Expanded(
+                        child: Text(
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            translateDatabase(
+                                itemsModel.itemsNameAr, itemsModel.itemsName),
+                            style: const TextStyle(
+                                color: AppColor.black,
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold)),
+                      ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [

@@ -25,7 +25,9 @@ class HomeControllerImp extends HomeController {
   // List data = [];
   List categories = [];
   List items = [];
-  // List items = [];
+  // List settings = [];
+  String homeTitleSettings = "";
+  String homebodySettings = "";
 
   late StatusRequest statusRequest;
 
@@ -59,7 +61,7 @@ class HomeControllerImp extends HomeController {
   searchData() async {
     statusRequest = StatusRequest.loading;
     var response = await homedata.searchData(search!.text);
-    print("=============================== Controller $response ");
+    logger.w("=============================== Controller $response ");
     statusRequest = handlingData(response);
     if (StatusRequest.success == statusRequest) {
       listdata.clear();
@@ -86,13 +88,17 @@ class HomeControllerImp extends HomeController {
   getdata() async {
     statusRequest = StatusRequest.loading;
     var response = await homedata.getData();
-    print("=============================== Controller $response ");
-    statusRequest = handlingData(response);
+    logger.w("=============================== Controller $response ");
+      statusRequest = handlingData(response);
     if (StatusRequest.success == statusRequest) {
       if (response['status'] == "success") {
         // تحويل القواميس إلى قوائم قبل استخدام addAll
         categories.addAll(List.from(response['categories']['data']));
         items.addAll(List.from(response['items']['data']));
+        homeTitleSettings =
+            response['settings']['data'][0]['settings_hometitle'];
+        homebodySettings = response['settings']['data'][0]['settings_homebody'];
+        // settings.addAll(List.from(response['settings']['data']));
       } else {
         statusRequest = StatusRequest.failure;
       }

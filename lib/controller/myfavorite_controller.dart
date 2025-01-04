@@ -1,8 +1,7 @@
+import 'package:e_commerce_app/core/services/services.dart';
 import 'package:get/get.dart';
 
 import '../core/class/statusrequest.dart';
-import '../core/functions/handlingDataController.dart';
-import '../core/services/services.dart';
 import '../data/datasource/remote/myfavorite_data.dart';
 import '../data/model/myfavorite_model.dart';
 
@@ -12,44 +11,48 @@ class MyFavoriteController extends GetxController {
   StatusRequest statusRequest = StatusRequest.none;
 
   MyServices myServices = Get.find();
+  List<MyFavoriteModel> data = [];
 
-  viewFavorite() async {
+  Future<void> viewFavorite() async {
     data.clear();
     statusRequest = StatusRequest.loading;
-    var response = await myfavoriteData
-        .viewData(myServices.sharedPreferences.getString("id")!);
-    print("=============================== Controller $response ");
-    statusRequest = handlingData(response);
-    if (StatusRequest.success == statusRequest) {
-      // Start backend
-      if (response['status'] == "success") {
-        List resdata = response['data'];
-        data.addAll(resdata.map((e) => MyFavoriteModel.fromJson(e)));
-        // ف الاسكرين  MyFavoriteModel.fromJson(e) وفرت عليا استدعاء لل
+    update();
 
-        //   data.addAll(response['data']); //  MyFavoriteModel.fromJson(لمكان العنصر اللي عاوز اطبعه )
-        print(data);
+    try {
+      var response = await myfavoriteData
+          .viewData(myServices.sharedPreferences.getString("id")!);
+      logger.w("=============================== Controller $response ");
+
+      if (response is Map && response.containsKey('status')) {
+        if (response['status'] == "success") {
+          List resdata = response['data'];
+          data.addAll(resdata.map((e) => MyFavoriteModel.fromJson(e)));
+          statusRequest = StatusRequest.success;
+          print(data);
+        } else {
+          statusRequest = StatusRequest.serverfailure;
+        }
       } else {
-        statusRequest = StatusRequest.failure;
-         
+        statusRequest = StatusRequest.serverfailure;
       }
-      // End
+    } catch (e) {
+      print('============================ Error View Favorites $e');
+      statusRequest = StatusRequest.serverfailure;
     }
     update();
   }
 
-  List<MyFavoriteModel> data = [];
-
-  void deleteMyfavorite(String favoriteid) async {
-    //data.clear();
-    var response = await myfavoriteData.deleteDataFromMyFavorite(favoriteid);
-    print("=============================== Controller $response ");
-    data.removeWhere((element) =>
-        element.favoriteId.toString() ==
-        favoriteid
-            .toString()); // to apdate page auto // السطر دا كل اللي بيعملة انه بيحدث الصفحة بعد الحذف ولكن الحذف تم من غيرة عادي
-
-    update();
+  Future<void> deleteMyfavorite(String favoriteid) async {
+    try {
+      var response = await myfavoriteData.deleteDataFromMyFavorite(favoriteid);
+      logger.w("=============================== Controller $response ");
+      data.removeWhere(
+          (element) => element.favoriteId.toString() == favoriteid.toString());
+      update();
+    } catch (e) {
+      print('============================ Error Delete Favorites $e');
+      statusRequest = StatusRequest.serverfailure;
+    }
   }
 
   @override

@@ -38,27 +38,27 @@ class CustomItemsCartList extends StatelessWidget {
           Expanded(
               flex: 3,
               child: ListTile(
-                title: Text(name, style: TextStyle(fontSize: 15)),
+                title: Text(name, style: const TextStyle(fontSize: 15)),
                 subtitle: Text(price,
                     style:
-                        TextStyle(color: AppColor.primaryColor, fontSize: 17)),
+                        const TextStyle(color: AppColor.primaryColor, fontSize: 17)),
               )),
           Expanded(
               child: Column(
             children: [
-              Container(
+              SizedBox(
                   height: 35,
-                  child: IconButton(onPressed: onAdd, icon: Icon(Icons.add))),
-              Container(
+                  child: IconButton(onPressed: onAdd, icon: const Icon(Icons.add))),
+              SizedBox(
                   height: 30,
                   child: Text(
                     count,
-                    style: TextStyle(fontFamily: "sans"),
+                    style: const TextStyle(fontFamily: "sans"),
                   )),
-              Container(
+              SizedBox(
                   height: 25,
                   child:
-                      IconButton(onPressed: onRemove, icon: Icon(Icons.remove)))
+                      IconButton(onPressed: onRemove, icon: const Icon(Icons.remove)))
             ],
           ))
         ]),

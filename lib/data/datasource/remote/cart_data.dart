@@ -1,5 +1,6 @@
 import 'package:e_commerce_app/core/class/crud.dart';
 import 'package:e_commerce_app/data/linkApi.dart';
+import 'package:flutter/material.dart';
 
 class CartData {
   Crud crud = Crud();
@@ -38,8 +39,9 @@ class CartData {
   checkCoupon(String couponname) async {
     var response =
         await crud.postData(AppLink.checkcoupon, {"couponname": couponname});
-    print("problem in checkcoupon");
+    debugPrint("problem in checkcoupon");
+    debugPrint("problem in response.fold");
+
     return response.fold((l) => l, (r) => r);
-    print("problem in response.fold");
   }
 }

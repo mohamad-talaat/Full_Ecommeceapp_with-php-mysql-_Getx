@@ -1,4 +1,5 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'package:flutter_ringtone_player/flutter_ringtone_player.dart';
@@ -21,27 +22,24 @@ PirmitionNotifications() async {
 
 fcmNotification() {
   FirebaseMessaging.onMessage.listen((message) {
-    print('onMessage========================== ${message.data}');
+    debugPrint('onMessage========================== ${message.data}');
     Get.snackbar(
       message.notification!.title.toString(),
       message.notification!.body.toString(),
-    );  
-     FlutterRingtonePlayer.playNotification();
+    );
+    FlutterRingtonePlayer();
     refreshPageNotification(message.data);
   });
-
-
-
 }
 
 refreshPageNotification(data) {
   //good instead of Stream Firebase // تعمل ريفرش للصفحة بالمعلومات المطلوبه يتعملها ابديت
-  print("============================= page id ");
-  print(data['pageid']);
-  print("============================= page name ");
-  print(data['pagename']);
-  print("================== Current Route");
-  print(Get.currentRoute);
+  debugPrint("============================= page id ");
+  debugPrint(data['pageid']);
+  debugPrint("============================= page name ");
+  debugPrint(data['pagename']);
+  debugPrint("================== Current Route");
+  debugPrint(Get.currentRoute);
 
   if (Get.currentRoute == "/orderspending" &&
       data['pagename'] == "refreshorderpending") {

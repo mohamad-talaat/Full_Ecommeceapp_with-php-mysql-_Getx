@@ -5,7 +5,6 @@ import 'package:e_commerce_app/data/model/itemmodel.dart';
 import 'package:e_commerce_app/view/widget/handlingdata/handlingdataview.dart';
 import 'package:e_commerce_app/view/widget/items/customlistitems.dart';
 import 'package:e_commerce_app/view/widget/items/listcategoriesitems.dart';
-import 'package:e_commerce_app/view/widget/offers/customlistitemsoffers.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

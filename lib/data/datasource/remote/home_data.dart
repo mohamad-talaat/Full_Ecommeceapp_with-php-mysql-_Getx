@@ -6,9 +6,9 @@ class HomeData {
   HomeData(this.crud);
 
   getData() async {
-    // print("the problem <<<<<<<<<in Link Data");
+    // debugPrint("the problem <<<<<<<<<in Link Data");
     var response = await crud.postData(AppLink.LinkHomeData, {});
-    // print("the problem here is <<<<<<<<<<<<<<<<testData");
+    // debugPrint("the problem here is <<<<<<<<<<<<<<<<testData");
     return response.fold((l) => l, (r) => r);
   }
 

@@ -1,9 +1,9 @@
+import 'package:e_commerce_app/core/services/services.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../core/class/statusrequest.dart';
 import '../core/functions/handlingDataController.dart';
-import '../core/services/services.dart';
 import '../data/datasource/remote/favorite_data.dart';
 
 class FavoriteController extends GetxController {
@@ -30,7 +30,7 @@ class FavoriteController extends GetxController {
     statusRequest = StatusRequest.loading;
     var response = await favoriteData.addData(
         myServices.sharedPreferences.getString("id")!, itemsid);
-    print("=============================== Controller $response ");
+    logger.w("=============================== Controller $response ");
     statusRequest = handlingData(response);
     if (StatusRequest.success == statusRequest) {
       // Start backend
@@ -51,7 +51,7 @@ class FavoriteController extends GetxController {
     statusRequest = StatusRequest.loading;
     var response = await favoriteData.removeData(
         myServices.sharedPreferences.getString("id")!, itemsid);
-    print("=============================== Controller $response ");
+    logger.w("=============================== Controller $response ");
     statusRequest = handlingData(response);
     if (StatusRequest.success == statusRequest) {
       // Start backend

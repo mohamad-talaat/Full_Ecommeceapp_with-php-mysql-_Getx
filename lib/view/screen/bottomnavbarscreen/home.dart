@@ -21,7 +21,7 @@ class Home extends StatelessWidget {
     return Scaffold(
       body: GetBuilder<HomeControllerImp>(
           builder: (controller) => Container(
-              padding: EdgeInsets.symmetric(horizontal: 15),
+              padding: const EdgeInsets.symmetric(horizontal: 15),
               child: ListView(
                 children: [
                   CustomAppBar(
@@ -42,17 +42,20 @@ class Home extends StatelessWidget {
                   !controller.issearch
                       ? HandlingDataView(
                           statusRequest: controller.statusRequest,
-                          widget: const Column(
+                          widget: Column(
                             children: [
                               CustomCardHome(
-                                  title: "A summer surprise",
-                                  body: "Cashback 20%"),
-                              CustomTitleHome(title: "Categories"),
-                              ListCategoriesHome(),
-                              CustomTitleHome(title: "Product for you"),
-                              ListItemsHome(),
-                              CustomTitleHome(title: "Offer"),
-                              ListItemsHome()
+                                  // title: controller.settings[0]['settings_hometitle'],
+                                  // body: controller.settings[0]['settings_homebody']),
+                                  title:
+                                      controller.homeTitleSettings.toString(),
+                                  body: controller.homebodySettings.toString()),
+                              const CustomTitleHome(title: "Categories"),
+                              const ListCategoriesHome(),
+                              const CustomTitleHome(title: "Product for you"),
+                              const ListItemsHome(),
+                              const CustomTitleHome(title: "Top Selling"),
+                              const ListItemsHome()
                             ],
                           ))
                       : searchScreen(listdatamodel: controller.listdata)
@@ -71,7 +74,7 @@ class searchScreen extends GetView<HomeControllerImp> {
     return ListView.builder(
         itemCount: listdatamodel.length,
         shrinkWrap: true,
-        physics: NeverScrollableScrollPhysics(),
+        physics: const NeverScrollableScrollPhysics(),
         itemBuilder: (context, index) {
           return InkWell(
             onTap: () {
@@ -81,7 +84,7 @@ class searchScreen extends GetView<HomeControllerImp> {
               margin: const EdgeInsets.symmetric(vertical: 20),
               child: Card(
                   child: Container(
-                padding: EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
                 child: Row(
                   children: [
                     Expanded(

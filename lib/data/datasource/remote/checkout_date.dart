@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 import '../../../core/class/crud.dart';
 import '../../linkApi.dart';
 
@@ -6,8 +8,8 @@ class CheckoutData {
   CheckoutData(this.crud);
   checkout(Map data) async {
     var response = await crud.postData(AppLink.checkout, data);
-    print("problem checkout");
+    debugPrint("problem checkout");
     return response.fold((l) => l, (r) => r);
-    print("response" + response.toString());
+    debugPrint("response$response");
   }
 }

@@ -27,7 +27,7 @@ class ResetPassword extends StatelessWidget {
           title: Text('ResetPassword',
               style: Theme.of(context)
                   .textTheme
-                  .headline1!
+                  .displayLarge!
                   .copyWith(color: AppColor.grey)),
         ),
         body: GetBuilder<ResetPasswordControllerImp>(
@@ -58,17 +58,15 @@ class ResetPassword extends StatelessWidget {
                         ),
                         CustomTextFormAuth(
                           isNumber: false,
-                          
 
                           valid: (val) {
                             return validInput(val!, 3, 40, "password");
                           },
                           mycontroller: controller.repassword,
-                          hinttext: "Re" + " " + "13".tr,
+                          hinttext: "Re ${"13".tr}",
                           iconData: Icons.lock_outline,
                           labeltext: "19".tr,
                           // mycontroller: ,
-
                         ),
                         CustomButtonAuth(
                             text: "33".tr,

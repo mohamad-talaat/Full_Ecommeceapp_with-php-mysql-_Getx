@@ -2,7 +2,7 @@ import 'package:e_commerce_app/core/functions/ckeckInternet.dart';
 import 'package:flutter/material.dart';
 
 class Test extends StatefulWidget {
-  Test({Key? key}) : super(key: key);
+  const Test({Key? key}) : super(key: key);
 
   @override
   State<Test> createState() => _TestState();
@@ -11,7 +11,7 @@ class Test extends StatefulWidget {
 class _TestState extends State<Test> {
   ckeck() async {
     var res = await checkTheInternet();
-    print(res);
+    debugPrint(res);
   }
 
   @override
@@ -28,9 +28,9 @@ class _TestState extends State<Test> {
         title: const Text('Test'),
       ),
       body: Container(
-          padding: EdgeInsets.all(20),
+          padding: const EdgeInsets.all(20),
           child: ListView(
-            children: [],
+            children: const [],
           )),
     );
   }

@@ -1,9 +1,9 @@
-import 'package:get/get.dart';
+import 'package:e_commerce_app/core/services/services.dart';
+ import 'package:get/get.dart';
 
 import '../../core/class/statusrequest.dart';
 import '../../core/functions/handlingDataController.dart';
-import '../../core/services/services.dart';
-import '../../data/datasource/remote/address_data.dart';
+ import '../../data/datasource/remote/address_data.dart';
 import '../../data/model/addressmodel.dart';
 
 class AddressViewController extends GetxController {
@@ -27,7 +27,7 @@ class AddressViewController extends GetxController {
     var response = await addressData
         .getData(myServices.sharedPreferences.getString("id")!);
 
-    print("=============================== Controller $response ");
+    logger.w("=============================== Controller $response ");
 
     statusRequest = handlingData(response);
 

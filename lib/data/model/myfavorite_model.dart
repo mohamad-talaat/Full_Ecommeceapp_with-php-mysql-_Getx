@@ -5,16 +5,16 @@ class MyFavoriteModel {
   String? itemsDesc;
   String? itemsDescAr;
   String? itemsImage;
-  int? itemsPrice;
+  String? itemsPrice;
   int? itemsDescount;
   String? itemsDate;
-  int? itemsActive;
-  int? itemsCount;
-  int? itemsCategories;
-  int? favoriteId;
-  int? favoriteUsersid;
-  int? favoriteItemsid;
-  int? usersId;
+  String? itemsActive;
+  String? itemsCount;
+  String? itemsCategories;
+  String? favoriteId;
+  String? favoriteUsersid;
+  String? favoriteItemsid;
+  String? usersId;
 
   MyFavoriteModel(
       {this.itemsId,
@@ -35,7 +35,7 @@ class MyFavoriteModel {
       this.usersId});
 
   MyFavoriteModel.fromJson(Map<String, dynamic> json) {
-    itemsId = json['items_id'];
+    itemsId = int.parse(json['items_id']);
     itemsName = json['items_name'];
     itemsNameAr = json['items_name_ar'];
     itemsDesc = json['items_desc'];
@@ -54,23 +54,23 @@ class MyFavoriteModel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['items_id'] = this.itemsId;
-    data['items_name'] = this.itemsName;
-    data['items_name_ar'] = this.itemsNameAr;
-    data['items_desc'] = this.itemsDesc;
-    data['items_desc_ar'] = this.itemsDescAr;
-    data['items_image'] = this.itemsImage;
-    data['items_price'] = this.itemsPrice;
-    data['items_descount'] = this.itemsDescount;
-    data['items_date'] = this.itemsDate;
-    data['items_active'] = this.itemsActive;
-    data['items_count'] = this.itemsCount;
-    data['items_categories'] = this.itemsCategories;
-    data['favorite_id'] = this.favoriteId;
-    data['favorite_usersid'] = this.favoriteUsersid;
-    data['favorite_itemsid'] = this.favoriteItemsid;
-    data['users_id'] = this.usersId;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['items_id'] = itemsId;
+    data['items_name'] = itemsName;
+    data['items_name_ar'] = itemsNameAr;
+    data['items_desc'] = itemsDesc;
+    data['items_desc_ar'] = itemsDescAr;
+    data['items_image'] = itemsImage;
+    data['items_price'] = itemsPrice;
+    data['items_descount'] = itemsDescount;
+    data['items_date'] = itemsDate;
+    data['items_active'] = itemsActive;
+    data['items_count'] = itemsCount;
+    data['items_categories'] = itemsCategories;
+    data['favorite_id'] = favoriteId;
+    data['favorite_usersid'] = favoriteUsersid;
+    data['favorite_itemsid'] = favoriteItemsid;
+    data['users_id'] = usersId;
     return data;
   }
 }

@@ -1,8 +1,8 @@
 class CouponModel {
-  int? couponId;
+  String? couponId;
   String? couponName;
-  int? couponCount;
-  int? couponDiscount;
+  String? couponCount;
+  String? couponDiscount;
   String? couponExpiredate;
 
   CouponModel(
@@ -21,12 +21,12 @@ class CouponModel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['coupon_id'] = this.couponId;
-    data['coupon_name'] = this.couponName;
-    data['coupon_count'] = this.couponCount;
-    data['coupon_discount'] = this.couponDiscount;
-    data['coupon_expiredate'] = this.couponExpiredate;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['coupon_id'] = couponId;
+    data['coupon_name'] = couponName;
+    data['coupon_count'] = couponCount;
+    data['coupon_discount'] = couponDiscount;
+    data['coupon_expiredate'] = couponExpiredate;
     return data;
   }
 }

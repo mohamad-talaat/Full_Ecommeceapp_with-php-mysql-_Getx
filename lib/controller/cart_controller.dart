@@ -20,14 +20,14 @@ class CartController extends GetxController {
 
   double priceorders = 0.0;
 
-  int totalcountitems = 0;
+  String totalcountitems = "0";
 
   add(String itemsid) async {
     statusRequest = StatusRequest.loading;
     update();
     var response = await cartData.addCart(
         myServices.sharedPreferences.getString("id")!, itemsid);
-    print("=============================== Controller $response ");
+    logger.w("=============================== Controller $response ");
     statusRequest = handlingData(response);
     if (StatusRequest.success == statusRequest) {
       // Start backend
@@ -50,7 +50,7 @@ class CartController extends GetxController {
 
     var response = await cartData.deleteCart(
         myServices.sharedPreferences.getString("id")!, itemsid);
-    print("=============================== Controller $response ");
+    logger.w("=============================== Controller $response ");
     statusRequest = handlingData(response);
     if (StatusRequest.success == statusRequest) {
       // Start backend
@@ -75,16 +75,17 @@ class CartController extends GetxController {
 
   int? discountcoupon = 0;
   String? couponname;
-  int? couponid;
+  String? couponid;
   CouponModel? couponModel;
 
   checkcoupon() async {
     statusRequest = StatusRequest.loading;
     update();
     var response = await cartData.checkCoupon(couponcontroller!.text);
-    print("=============================== Controller response $response ");
+    debugPrint(
+        "=============================== Controller response $response ");
     statusRequest = handlingData(response);
-    print(
+    debugPrint(
         "=============================== Controller statusRequest $statusRequest ");
     if (StatusRequest.success == statusRequest) {
       // Start backend
@@ -115,7 +116,7 @@ class CartController extends GetxController {
   }
 
   resetVarCart() {
-    totalcountitems = 0;
+    totalcountitems = "0";
     priceorders = 0.0;
     data.clear();
   }
@@ -130,7 +131,7 @@ class CartController extends GetxController {
     update();
     var response =
         await cartData.viewData(myServices.sharedPreferences.getString("id")!);
-    print("=============================== Controller $response ");
+    logger.w("=============================== Controller $response ");
     statusRequest = handlingData(response);
     if (StatusRequest.success == statusRequest) {
       // Start backend

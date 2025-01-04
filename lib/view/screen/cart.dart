@@ -14,7 +14,7 @@ class Cart extends StatelessWidget {
   Widget build(BuildContext context) {
     CartController cartController = Get.put(CartController());
     return Scaffold(
-        appBar: AppBar(title: Text("My Cart")),
+        appBar: AppBar(title: const Text("My Cart")),
         bottomNavigationBar: GetBuilder<CartController>(
             builder: (controller) => BottomNavgationBarCart(
                   onApplyCoupon: () {
@@ -31,13 +31,13 @@ class Cart extends StatelessWidget {
                 statusRequest: controller.statusRequest,
                 widget: ListView(
                   children: [
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     //     Text("You Have ${cartController.totalcountitems} Items in Your List")                    ,
                     TopCardCart(
                         message:
                             "You Have ${cartController.totalcountitems} Items in Your List"),
                     Container(
-                      padding: EdgeInsets.all(10),
+                      padding: const EdgeInsets.all(10),
                       child: Column(
                         children: [
                           ...List.generate(

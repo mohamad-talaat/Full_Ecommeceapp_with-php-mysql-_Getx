@@ -2,7 +2,6 @@ import 'package:e_commerce_app/core/Initialbinding.dart';
 import 'package:e_commerce_app/core/localization/translation.dart';
 import 'package:e_commerce_app/core/pagescall/routes.dart';
 import 'package:e_commerce_app/core/services/services.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -13,7 +12,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await initialServices();
   FirebaseMessaging.instance.getToken().then((value) {
-    print(value);
+    debugPrint(value);
   });
   runApp(const MyApp());
 }
@@ -24,14 +23,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     LocaleController controller = Get.put(LocaleController());
     return GetMaterialApp(
-      //  home: Cart(),
+      // home: HomePage(),
       translations: MyTranslation(),
       debugShowCheckedModeBanner: false,
       // title: 'Flutter Demo',
       locale: controller.language,
       theme: controller.appTheme,
       initialBinding: InitialBinding(),
-      // routes: routes,
       getPages: routes,
     );
   }

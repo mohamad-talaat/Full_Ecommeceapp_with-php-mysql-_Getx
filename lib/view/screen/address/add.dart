@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/core/services/services.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -31,6 +32,7 @@ class AddressAdd extends StatelessWidget {
                           markers: controllerpage.markers.toSet(),
                           onTap: (latlong) {
                             controllerpage.addMarkers(latlong);
+                            logger.w("message $latlong");
                           },
                           initialCameraPosition: controllerpage.kGooglePlex!,
                           onMapCreated: (GoogleMapController controllermap) {
@@ -46,10 +48,10 @@ class AddressAdd extends StatelessWidget {
                               onPressed: () {
                                 controllerpage.goToPageAddDetailsAddress();
                               },
-                              child:
-                                  Text("اكمال", style: TextStyle(fontSize: 18)),
                               color: AppColor.primaryColor,
                               textColor: Colors.white,
+                              child:
+                                  const Text("اكمال", style: TextStyle(fontSize: 18)),
                             ),
                           ),
                         )

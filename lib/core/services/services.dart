@@ -1,6 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:get/get.dart';
+import 'package:logger/logger.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+var logger =   Logger();
 
 class MyServices extends GetxService {
   late SharedPreferences sharedPreferences;
@@ -10,6 +12,9 @@ class MyServices extends GetxService {
     sharedPreferences = await SharedPreferences.getInstance();
     return this;
   }
+
+
+
 }
 
 initialServices() async {

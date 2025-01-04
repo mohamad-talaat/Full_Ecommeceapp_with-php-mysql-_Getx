@@ -28,7 +28,7 @@ class SignUp extends StatelessWidget {
           title: Text('17'.tr,
               style: Theme.of(context)
                   .textTheme
-                  .headline1!
+                  .displayLarge!
                   .copyWith(color: AppColor.grey)),
         ),
         body: WillPopScope(

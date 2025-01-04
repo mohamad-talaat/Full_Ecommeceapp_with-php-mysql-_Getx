@@ -51,7 +51,7 @@ class OrdersArchiveController extends GetxController {
     update();
     var response = await ordersArchiveData
         .getData(myServices.sharedPreferences.getString("id")!);
-    print("=============================== Controller $response ");
+    logger.w("=============================== Controller $response ");
     statusRequest = handlingData(response);
     if (StatusRequest.success == statusRequest) {
       // Start backend

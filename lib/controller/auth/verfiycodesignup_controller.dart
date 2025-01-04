@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/core/services/services.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -25,7 +26,7 @@ class VerifyCodeSignUpControllerImp extends VerifyCodeSignUpController {
         StatusRequest.loading; //اول ما نستدعي الداتا بيكون ف مرحلة التحميل لسه
     var response = await testverfitcodeDignupData.postData(
         email!, verfiycoderesetpassword);
-    print("=============================== Controller $response ");
+    logger.w("=============================== Controller $response ");
     statusRequest = handlingData(response);
     if (StatusRequest.success == statusRequest) {
       if (response["status"] == "success") {
@@ -42,9 +43,8 @@ class VerifyCodeSignUpControllerImp extends VerifyCodeSignUpController {
   }
 
   Resend() async {
-      statusRequest =
-        StatusRequest.loading;
-        var response = await testverfitcodeDignupData.resendVerfiyCode(email!);
+    statusRequest = StatusRequest.loading;
+    var response = await testverfitcodeDignupData.resendVerfiyCode(email!);
 
     if (response["status"] == "success") {
       Get.offNamed(AppRoute.successSignUp);

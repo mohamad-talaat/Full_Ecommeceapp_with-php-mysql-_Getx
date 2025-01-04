@@ -8,7 +8,6 @@ import '../../core/functions/handlingDataController.dart';
 
 class OrdersPendingController extends GetxController {
   OrdersPendingData ordersPendingData = OrdersPendingData(Get.find());
-
   List<OrdersModel> data = [];
 
   late StatusRequest statusRequest;
@@ -51,7 +50,9 @@ class OrdersPendingController extends GetxController {
     update();
     var response = await ordersPendingData
         .getData(myServices.sharedPreferences.getString("id")!);
-    print("=============================== Controller $response ");
+    logger.w("=============================== Controller $response ");
+    logger.d("$response");
+
     statusRequest = handlingData(response);
     if (StatusRequest.success == statusRequest) {
       // Start backend
@@ -68,11 +69,11 @@ class OrdersPendingController extends GetxController {
 
   deleteOrder(String orderid) async {
     data.clear();
-    
+
     statusRequest = StatusRequest.loading;
     update();
     var response = await ordersPendingData.deleteData(orderid);
-    print("=============================== Controller $response ");
+    logger.w("=============================== Controller $response ");
     statusRequest = handlingData(response);
     if (StatusRequest.success == statusRequest) {
       // Start backend

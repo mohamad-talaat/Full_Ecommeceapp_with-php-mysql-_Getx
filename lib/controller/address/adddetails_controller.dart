@@ -29,8 +29,8 @@ class AddAddressDetailsController extends GetxController {
     lat = Get.arguments['lat'];
     long = Get.arguments['long'];
 
-    print(lat);
-    print(long);
+    debugPrint(lat);
+    debugPrint(long);
   }
 
   addAddress() async {
@@ -45,7 +45,7 @@ class AddAddressDetailsController extends GetxController {
         lat!,
         long!);
 
-    print("=============================== Controller $response ");
+    logger.w("=============================== Controller $response ");
 
     statusRequest = handlingData(response);
 
@@ -53,6 +53,7 @@ class AddAddressDetailsController extends GetxController {
       // Start backend
       if (response['status'] == "success") {
         Get.offAllNamed(AppRoute.homePage);
+        Get.snackbar("Alert", "Now , You can order to this address");
       } else {
         statusRequest = StatusRequest.failure;
       }

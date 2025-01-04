@@ -15,8 +15,8 @@ class OrdersModel {
   String? addressName;
   String? addressCity;
   String? addressStreet;
-  String? addressLat;
-  String? addressLong;
+  double? addressLat;
+  double? addressLong;
 
   OrdersModel(
       {this.ordersId,
@@ -55,12 +55,12 @@ class OrdersModel {
     addressName = json['address_name'].toString();
     addressCity = json['address_city'].toString();
     addressStreet = json['address_street'];
-    addressLat = json['address_lat'].toString();
-    addressLong = json['address_long'].toString();
+    addressLat = double.parse(json['address_lat']??0.0);
+    addressLong = double.parse(json['address_lang']??0.0) ;
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['orders_id'] = ordersId;
     data['orders_usersid'] = ordersUsersid;
     data['orders_address'] = ordersAddress;
@@ -78,7 +78,7 @@ class OrdersModel {
     data['address_city'] = addressCity;
     data['address_street'] = addressStreet;
     data['address_lat'] = addressLat;
-    data['address_long'] = addressLong;
+    data['address_lang'] = addressLong;
     return data;
   }
 }

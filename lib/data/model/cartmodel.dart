@@ -1,22 +1,22 @@
 class CartModel {
   String? itemsprice;
-  int? countitems;
-  int? cartId;
-  int? cartUsersid;
-  int? cartItemsid;
-  int? cartOrders;
-  int? itemsId;
+  String? countitems;
+  String? cartId;
+  String? cartUsersid;
+  String? cartItemsid;
+  String? cartOrders;
+  String? itemsId;
   String? itemsName;
   String? itemsNameAr;
   String? itemsDesc;
   String? itemsDescAr;
   String? itemsImage;
-  int? itemsPrice;
-  int? itemsDescount;
+  String? itemsPrice;
+  String? itemsDescount;
   String? itemsDate;
-  int? itemsActive;
-  int? itemsCount;
-  int? itemsCategories;
+  String? itemsActive;
+  String? itemsCount;
+  String? itemsCategories;
 
   CartModel(
       {this.itemsprice,
@@ -60,25 +60,25 @@ class CartModel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['itemsprice'] = this.itemsprice;
-    data['countitems'] = this.countitems;
-    data['cart_id'] = this.cartId;
-    data['cart_usersid'] = this.cartUsersid;
-    data['cart_itemsid'] = this.cartItemsid;
-    data['cart_orders'] = this.cartOrders;
-    data['items_id'] = this.itemsId;
-    data['items_name'] = this.itemsName;
-    data['items_name_ar'] = this.itemsNameAr;
-    data['items_desc'] = this.itemsDesc;
-    data['items_desc_ar'] = this.itemsDescAr;
-    data['items_image'] = this.itemsImage;
-    data['items_price'] = this.itemsPrice;
-    data['items_descount'] = this.itemsDescount;
-    data['items_date'] = this.itemsDate;
-    data['items_active'] = this.itemsActive;
-    data['items_count'] = this.itemsCount;
-    data['items_categories'] = this.itemsCategories;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['itemsprice'] = itemsprice;
+    data['countitems'] = countitems;
+    data['cart_id'] = cartId;
+    data['cart_usersid'] = cartUsersid;
+    data['cart_itemsid'] = cartItemsid;
+    data['cart_orders'] = cartOrders;
+    data['items_id'] = itemsId;
+    data['items_name'] = itemsName;
+    data['items_name_ar'] = itemsNameAr;
+    data['items_desc'] = itemsDesc;
+    data['items_desc_ar'] = itemsDescAr;
+    data['items_image'] = itemsImage;
+    data['items_price'] = itemsPrice;
+    data['items_descount'] = itemsDescount;
+    data['items_date'] = itemsDate;
+    data['items_active'] = itemsActive;
+    data['items_count'] = itemsCount;
+    data['items_categories'] = itemsCategories;
     return data;
   }
 }

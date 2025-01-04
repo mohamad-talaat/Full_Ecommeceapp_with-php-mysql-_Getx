@@ -20,7 +20,7 @@ class AddressView extends StatelessWidget {
             onPressed: () {
               Get.toNamed(AppRoute.addressadd);
             },
-            child: Icon(Icons.add)),
+            child: const Icon(Icons.add)),
         body: GetBuilder<AddressViewController>(
           builder: (controller) => HandlingDataView(
             statusRequest: controller.statusRequest,
@@ -52,13 +52,13 @@ class CardAddress extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       child: Container(
-          padding: EdgeInsets.all(10),
+          padding: const EdgeInsets.all(10),
           child: ListTile(
             title: Text(addressModel.addressName!),
             subtitle: Text(
                 "${addressModel.addressCity!} ${addressModel.addressStreet}"),
             trailing: IconButton(
-                onPressed: onDelete, icon: Icon(Icons.delete_outline)),
+                onPressed: onDelete, icon: const Icon(Icons.delete_outline)),
           )),
     );
   }

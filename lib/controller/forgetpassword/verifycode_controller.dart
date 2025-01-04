@@ -1,4 +1,5 @@
 import 'package:e_commerce_app/data/datasource/remote/forgetpassword/verfiycoderesetpassworddata.dart';
+import 'package:e_commerce_app/core/services/services.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -21,7 +22,7 @@ class VerifyCodeControllerImp extends VerifyCodeController {
         StatusRequest.loading; //اول ما نستدعي الداتا بيكون ف مرحلة التحميل لسه
     var response = await testverfiycodeforgetpasswordData.postData(
         email!, verfiycodesignup);
-    print("=============================== Controller $response ");
+    logger.w("=============================== Controller $response ");
     statusRequest = handlingData(response);
     if (StatusRequest.success == statusRequest) {
       if (response["status"] == "success") {

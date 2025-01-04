@@ -25,7 +25,7 @@ class ProductDetailsControllerImp extends ProductDetailsController {
   intialData() async {
     statusRequest = StatusRequest.loading;
     itemsModel = Get.arguments['itemsmodel'];
-    countitems = await getCountItems(itemsModel.itemsId.toString()!);
+    countitems = await getCountItems(itemsModel.itemsId.toString());
     statusRequest = StatusRequest.success;
     update();
   }
@@ -34,15 +34,15 @@ class ProductDetailsControllerImp extends ProductDetailsController {
     statusRequest = StatusRequest.loading;
     var response = await cartData.countCart(
         myServices.sharedPreferences.getString("id")!, itemsid);
-    print("=============================== Controller $response ");
+    logger.w("=============================== Controller $response ");
     statusRequest = handlingData(response);
     if (StatusRequest.success == statusRequest) {
       // Start backend
       if (response['status'] == "success") {
         int countitems = 0;
         countitems = int.parse(response['data'].toString());
-        print("==================================");
-        print("$countitems");
+        debugPrint("==================================");
+        debugPrint("$countitems");
         return countitems;
         // data.addAll(response['data']);
       } else {
@@ -57,7 +57,7 @@ class ProductDetailsControllerImp extends ProductDetailsController {
     update();
     var response = await cartData.addCart(
         myServices.sharedPreferences.getString("id")!, itemsid);
-    print("=============================== Controller $response ");
+    logger.w("=============================== Controller $response ");
     statusRequest = handlingData(response);
     if (StatusRequest.success == statusRequest) {
       // Start backend
@@ -80,7 +80,7 @@ class ProductDetailsControllerImp extends ProductDetailsController {
 
     var response = await cartData.deleteCart(
         myServices.sharedPreferences.getString("id")!, itemsid);
-    print("=============================== Controller $response ");
+    logger.w("=============================== Controller $response ");
     statusRequest = handlingData(response);
     if (StatusRequest.success == statusRequest) {
       // Start backend
@@ -104,14 +104,14 @@ class ProductDetailsControllerImp extends ProductDetailsController {
   ];
 
   add() {
-    addItems(itemsModel.itemsId.toString()!);
+    addItems(itemsModel.itemsId.toString());
     countitems++;
     update();
   }
 
   remove() {
     if (countitems > 0) {
-      deleteitems(itemsModel.itemsId.toString()!);
+      deleteitems(itemsModel.itemsId.toString());
       countitems--;
       update();
     }

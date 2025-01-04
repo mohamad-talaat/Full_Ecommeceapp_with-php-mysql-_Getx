@@ -16,12 +16,11 @@ class TestView extends StatelessWidget {
         backgroundColor: AppColor.primaryColor,
       ),
       body: GetBuilder<TestController>(builder: (controller) {
-        print("StatusRequest: ${controller.statusRequest}");
+        debugPrint("StatusRequest: ${controller.statusRequest}");
         return HandlingDataView(
             statusRequest: controller.statusRequest,
             widget: ListView.builder(
                 itemCount: controller.data.length,
-                
                 itemBuilder: (context, index) {
                   return Text("${controller.data
                       //[index]["title"]

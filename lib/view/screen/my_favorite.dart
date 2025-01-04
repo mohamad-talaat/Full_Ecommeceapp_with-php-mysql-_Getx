@@ -17,7 +17,7 @@ class MyFavorite extends StatelessWidget {
         assignId: true,
         builder: (controller) {
           return Column(children: [
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             // Padding(

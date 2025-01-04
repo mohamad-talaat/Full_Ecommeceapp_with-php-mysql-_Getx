@@ -1,8 +1,5 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:e_commerce_app/controller/favorite_controller.dart';
-import 'package:e_commerce_app/controller/home_controller.dart';
 import 'package:e_commerce_app/controller/offers_controller.dart';
-import 'package:e_commerce_app/data/linkApi.dart';
 import 'package:e_commerce_app/data/model/itemmodel.dart';
 import 'package:e_commerce_app/view/widget/customappbar.dart';
 import 'package:e_commerce_app/view/widget/handlingdata/handlingdataview.dart';
@@ -43,12 +40,9 @@ class Offers extends StatelessWidget {
                       shrinkWrap: true,
                       physics: const NeverScrollableScrollPhysics(),
                       itemCount: controller.data.length,
-                     
                       itemBuilder: (BuildContext context, index) {
-                       
-                     return CustomListItemsOffers(
-                            itemsModel: controller.data[index] as ItemsModel
-                        );
+                        return CustomListItemsOffers(
+                            itemsModel: controller.data[index] as ItemsModel);
                       }))
             ]));
   }
