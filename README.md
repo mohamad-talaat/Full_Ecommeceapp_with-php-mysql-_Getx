@@ -71,9 +71,9 @@ Responsive Screens
   
  
 
-__________________________
-            |  <gif src="ss/demo.mp4" width="600">  |
-            
+_# 📸 Screenshots
+_________________________
+             
 | <img src="ss/1.png" width="300">  | <img src="ss/2.png" width="300">  |
 | <img src="ss/3.png" width="300">  | <img src="ss/4.png" width="300">  |
 | <img src="ss/5.png" width="400">  | <img src="ss/6.png" width="400">  |
