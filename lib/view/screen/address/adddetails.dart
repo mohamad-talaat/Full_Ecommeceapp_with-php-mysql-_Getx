@@ -7,7 +7,7 @@ import '../../widget/auth/customtextformauth.dart';
 import '../../widget/handlingdata/handlingdataview.dart';
 
 class AddressAddDetails extends StatelessWidget {
-  const AddressAddDetails({Key? key}) : super(key: key);
+  const AddressAddDetails({super.key});
 
   @override
   Widget build(BuildContext context) {

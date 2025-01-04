@@ -8,12 +8,11 @@ class CustomMaterialButton extends StatelessWidget {
   final bool active;
 
   const CustomMaterialButton(
-      {Key? key,
+      {super.key,
       required this.onpressed,
       required this.iconbutton,
       required this.textButton,
-      required this.active})
-      : super(key: key);
+      required this.active});
 
   @override
   Widget build(BuildContext context) {

@@ -13,8 +13,7 @@ import '../../../data/model/itemmodel.dart';
 class CustomListItemsOffers extends GetView<OffersController> {
   final ItemsModel itemsModel;
   // final bool active;
-  const CustomListItemsOffers({Key? key, required this.itemsModel})
-      : super(key: key);
+  const CustomListItemsOffers({super.key, required this.itemsModel});
 
   @override
   Widget build(BuildContext context) {

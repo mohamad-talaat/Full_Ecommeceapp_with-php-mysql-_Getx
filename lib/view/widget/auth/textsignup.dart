@@ -6,11 +6,10 @@ class CustomTextSignUpOrSignIn extends StatelessWidget {
   final String texttwo;
   final void Function() onTap;
   const CustomTextSignUpOrSignIn(
-      {Key? key,
+      {super.key,
       required this.textone,
       required this.texttwo,
-      required this.onTap})
-      : super(key: key);
+      required this.onTap});
 
   @override
   Widget build(BuildContext context) {

@@ -13,7 +13,7 @@ import '../../data/linkApi.dart';
 import '../widget/customappbar.dart';
 
 class Items extends StatelessWidget {
-  const Items({Key? key}) : super(key: key);
+  const Items({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -73,7 +73,7 @@ class Items extends StatelessWidget {
 
 class searchScreen extends GetView<HomeControllerImp> {
   final List<ItemsModel> listdatamodel;
-  const searchScreen({Key? key, required this.listdatamodel}) : super(key: key);
+  const searchScreen({super.key, required this.listdatamodel});
 
   @override
   Widget build(BuildContext context) {

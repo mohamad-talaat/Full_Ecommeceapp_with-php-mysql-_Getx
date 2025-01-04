@@ -83,7 +83,7 @@ class LocationPickerController extends GetxController {
 }
 
 class LocationPicker extends StatelessWidget {
-  const LocationPicker({Key? key}) : super(key: key);
+  const LocationPicker({super.key});
 
   @override
   Widget build(BuildContext context) {

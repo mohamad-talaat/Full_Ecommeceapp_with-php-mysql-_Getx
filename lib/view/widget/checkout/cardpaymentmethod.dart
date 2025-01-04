@@ -6,8 +6,7 @@ class CardPaymentMethodCheckout extends StatelessWidget {
   final String title;
   final bool isActive;
   const CardPaymentMethodCheckout(
-      {Key? key, required this.title, required this.isActive})
-      : super(key: key);
+      {super.key, required this.title, required this.isActive});
 
   @override
   Widget build(BuildContext context) {

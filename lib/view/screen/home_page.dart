@@ -7,7 +7,7 @@ import '../../controller/homescreen_controller.dart';
 import '../widget/bottomnavbarscreen/custommaterialbutton.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {

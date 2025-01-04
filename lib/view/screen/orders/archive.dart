@@ -6,7 +6,7 @@ import '../../widget/handlingdata/handlingdataview.dart';
 import '../../widget/orders/orderslistcardarchive.dart';
 
 class OrdersArchiveView extends StatelessWidget {
-  const OrdersArchiveView({Key? key}) : super(key: key);
+  const OrdersArchiveView({super.key});
   @override
   Widget build(BuildContext context) {
     Get.put(OrdersArchiveController());

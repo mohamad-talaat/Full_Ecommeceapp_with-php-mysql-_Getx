@@ -7,13 +7,12 @@ class CustomAppBar extends StatelessWidget {
   final void Function()? onPressedfavorite;
   final TextEditingController? mycontroller;
   const CustomAppBar(
-      {Key? key,
+      {super.key,
       required this.titleappbar,
       this.onPressedSearch,
       this.onPressedfavorite,
       this.mycontroller,
-      this.onChange})
-      : super(key: key);
+      this.onChange});
 
   @override
   Widget build(BuildContext context) {

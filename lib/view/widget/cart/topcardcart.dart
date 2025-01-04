@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class TopCardCart extends StatelessWidget {
   final String message;
-  const TopCardCart({Key? key, required this.message}) : super(key: key);
+  const TopCardCart({super.key, required this.message});
 
   @override
   Widget build(BuildContext context) {

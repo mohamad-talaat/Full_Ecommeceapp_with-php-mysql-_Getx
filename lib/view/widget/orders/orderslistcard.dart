@@ -9,7 +9,7 @@ import '../../../data/model/ordersmodel.dart';
 
 class CardOrdersList extends GetView<OrdersPendingController> {
   final OrdersModel listdata;
-  const CardOrdersList({Key? key, required this.listdata}) : super(key: key);
+  const CardOrdersList({super.key, required this.listdata});
 
   @override
   Widget build(BuildContext context) {

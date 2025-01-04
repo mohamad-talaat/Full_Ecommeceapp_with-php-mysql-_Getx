@@ -10,8 +10,7 @@ import '../../../data/linkApi.dart';
 class CustomMyFavorite extends GetView<MyFavoriteController> {
   final MyFavoriteModel itemsModel;
   // final bool active;
-  const CustomMyFavorite({Key? key, required this.itemsModel})
-      : super(key: key);
+  const CustomMyFavorite({super.key, required this.itemsModel});
 
   @override
   Widget build(BuildContext context) {

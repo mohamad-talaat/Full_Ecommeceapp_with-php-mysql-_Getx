@@ -2,7 +2,7 @@ import 'package:e_commerce_app/core/functions/ckeckInternet.dart';
 import 'package:flutter/material.dart';
 
 class Test extends StatefulWidget {
-  const Test({Key? key}) : super(key: key);
+  const Test({super.key});
 
   @override
   State<Test> createState() => _TestState();

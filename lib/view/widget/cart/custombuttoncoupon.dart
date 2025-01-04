@@ -5,8 +5,7 @@ import '../../../core/constant/color.dart';
 class CustomButtonCoupon extends StatelessWidget {
   final String textbutton;
   final void Function()? onPressed;
-  const CustomButtonCoupon({Key? key, required this.textbutton, this.onPressed})
-      : super(key: key);
+  const CustomButtonCoupon({super.key, required this.textbutton, this.onPressed});
 
   @override
   Widget build(BuildContext context) {

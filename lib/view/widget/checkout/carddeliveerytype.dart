@@ -7,11 +7,10 @@ class CardDeliveryTypeCheckout extends StatelessWidget {
   final String title;
   final bool active;
   const CardDeliveryTypeCheckout(
-      {Key? key,
+      {super.key,
       required this.imagename,
       required this.title,
-      required this.active})
-      : super(key: key);
+      required this.active});
 
   @override
   Widget build(BuildContext context) {

@@ -9,7 +9,7 @@ import 'package:get/get.dart';
 import '../../widget/handlingdata/handlingdataview.dart';
 
 class VerfiyCodeSignUp extends StatelessWidget {
-  const VerfiyCodeSignUp({Key? key}) : super(key: key);
+  const VerfiyCodeSignUp({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -11,7 +11,7 @@ import '../../controller/checkout_controller.dart';
 import '../widget/handlingdata/handlingdataview.dart';
 
 class Checkout extends StatelessWidget {
-  const Checkout({Key? key}) : super(key: key);
+  const Checkout({super.key});
 
   @override
   Widget build(BuildContext context) {

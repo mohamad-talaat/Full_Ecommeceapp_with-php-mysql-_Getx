@@ -15,14 +15,13 @@ class BottomNavgationBarCart extends GetView<CartController> {
 
   final TextEditingController? controllercoupon;
   const BottomNavgationBarCart(
-      {Key? key,
+      {super.key,
       required this.price,
       required this.discount,
       required this.shipping,
       required this.totalprice,
       required this.controllercoupon,
-      this.onApplyCoupon})
-      : super(key: key);
+      this.onApplyCoupon});
 
   @override
   Widget build(BuildContext context) {

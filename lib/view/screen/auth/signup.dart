@@ -15,7 +15,7 @@ import 'package:get/get.dart';
 import '../../widget/handlingdata/handlingdataview.dart';
 
 class SignUp extends StatelessWidget {
-  const SignUp({Key? key}) : super(key: key);
+  const SignUp({super.key});
 
   @override
   Widget build(BuildContext context) {

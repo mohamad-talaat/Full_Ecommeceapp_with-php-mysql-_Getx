@@ -11,7 +11,7 @@ import 'package:get/get.dart';
 import '../../controller/productDetails_controller.dart';
 
 class ProductDetails extends StatelessWidget {
-  const ProductDetails({Key? key}) : super(key: key);
+  const ProductDetails({super.key});
 
   @override
   build(BuildContext context) {

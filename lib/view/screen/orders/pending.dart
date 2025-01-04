@@ -6,7 +6,7 @@ import '../../widget/handlingdata/handlingdataview.dart';
 import '../../widget/orders/orderslistcard.dart';
 
 class OrdersPending extends StatelessWidget {
-  const OrdersPending({Key? key}) : super(key: key);
+  const OrdersPending({super.key});
   @override
   Widget build(BuildContext context) {
     Get.put(OrdersPendingController());

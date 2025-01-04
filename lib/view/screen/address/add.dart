@@ -8,7 +8,7 @@ import '../../../core/constant/color.dart';
 import '../../widget/handlingdata/handlingdataview.dart';
 
 class AddressAdd extends StatelessWidget {
-  const AddressAdd({Key? key}) : super(key: key);
+  const AddressAdd({super.key});
 
   @override
   Widget build(BuildContext context) {

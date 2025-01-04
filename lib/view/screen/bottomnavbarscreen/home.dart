@@ -13,7 +13,7 @@ import '../../widget/home/listcategorieshome.dart';
 import '../../widget/home/listitemshome.dart';
 
 class Home extends StatelessWidget {
-  const Home({Key? key}) : super(key: key);
+  const Home({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +67,7 @@ class Home extends StatelessWidget {
 
 class searchScreen extends GetView<HomeControllerImp> {
   final List<ItemsModel> listdatamodel;
-  const searchScreen({Key? key, required this.listdatamodel}) : super(key: key);
+  const searchScreen({super.key, required this.listdatamodel});
 
   @override
   Widget build(BuildContext context) {

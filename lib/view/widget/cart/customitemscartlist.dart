@@ -13,14 +13,14 @@ class CustomItemsCartList extends StatelessWidget {
   final void Function() onAdd;
   final void Function() onRemove;
   const CustomItemsCartList({
-    Key? key,
+    super.key,
     required this.name,
     required this.price,
     required this.count,
     required this.image,
     required this.onAdd,
     required this.onRemove,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

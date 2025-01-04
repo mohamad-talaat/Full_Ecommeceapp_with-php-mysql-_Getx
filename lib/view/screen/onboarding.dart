@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class OnBoarding extends StatelessWidget {
-  const OnBoarding({Key? key}) : super(key: key);
+  const OnBoarding({super.key});
 
   @override
   Widget build(BuildContext context) {

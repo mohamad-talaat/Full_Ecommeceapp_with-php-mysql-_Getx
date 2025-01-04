@@ -8,7 +8,7 @@ import '../../core/constant/color.dart';
 import '../../core/pagescall/pagename.dart';
 
 class Settings extends StatelessWidget {
-  const Settings({Key? key}) : super(key: key);
+  const Settings({super.key});
 
   @override
   Widget build(BuildContext context) {

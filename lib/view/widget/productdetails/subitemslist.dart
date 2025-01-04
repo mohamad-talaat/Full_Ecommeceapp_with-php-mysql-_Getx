@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class SubitemsList extends GetView<ProductDetailsControllerImp> {
-  const SubitemsList({Key? key}) : super(key: key);
+  const SubitemsList({super.key});
 
   @override
   Widget build(BuildContext context) {

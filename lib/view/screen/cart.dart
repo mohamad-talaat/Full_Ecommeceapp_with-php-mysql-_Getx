@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 import '../widget/handlingdata/handlingdataview.dart';
 
 class Cart extends StatelessWidget {
-  const Cart({Key? key}) : super(key: key);
+  const Cart({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -5,7 +5,7 @@ import '../../controller/onboarding_controller.dart';
 import '../../core/constant/color.dart';
 
 class CustomButtonOnBoarding extends GetView<OnBoardingControllerImp> {
-  const CustomButtonOnBoarding({Key? key}) : super(key: key);
+  const CustomButtonOnBoarding({super.key});
   @override
   Widget build(BuildContext context) {
     return Container(

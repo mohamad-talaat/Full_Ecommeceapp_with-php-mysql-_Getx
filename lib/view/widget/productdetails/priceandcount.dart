@@ -7,12 +7,11 @@ class PriceAndCountItems extends StatelessWidget {
   final String price;
   final String count;
   const PriceAndCountItems(
-      {Key? key,
+      {super.key,
       required this.onAdd,
       required this.onRemove,
       required this.price,
-      required this.count})
-      : super(key: key);
+      required this.count});
 
   @override
   Widget build(BuildContext context) {

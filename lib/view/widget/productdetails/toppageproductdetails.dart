@@ -7,7 +7,7 @@ import '../../../core/constant/color.dart';
 import '../../../data/linkApi.dart';
 
 class TopProductPageDetails extends GetView<ProductDetailsControllerImp> {
-  const TopProductPageDetails({Key? key}) : super(key: key);
+  const TopProductPageDetails({super.key});
 
   @override
   Widget build(BuildContext context) {
